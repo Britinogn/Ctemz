@@ -104,3 +104,13 @@ export interface RecentActivity {
     email?: string;
     message?: string;
 }
+
+// Recent activity type (for projects/blogs in lists)
+export interface ActivityItem {
+    _id: string
+    title: string
+    description?: string
+    createdAt: string
+    updatedAt?: string
+  // Add fields like category, status if needed from API
+}

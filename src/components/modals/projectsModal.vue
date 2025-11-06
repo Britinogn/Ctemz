@@ -1,198 +1,192 @@
 <template>
-    <div @click.self="$emit ('close')"
-        class="fixed top-0 left-0 right-0 bottom-0 bg-black/80 flex items-center justify-center z-auto p-4 overflow-y-auto ">
+  <div @click.self="$emit ('close')"
+    class="fixed top-0 left-0 right-0 bottom-0 bg-black/80 flex items-center justify-center z-auto p-4 overflow-y-auto ">
 
-        <div class="bg-amber-200 rounded-xl max-w-[600px] w-full max-h-[90vh] flex flex-col shadow-2xl shadow-black/30">
-            <!-- Header -->
-            <div class="flex justify-between items-center p-6 border-b border-gray-300">
-                <h2>{{ isEdit ? 'Update Project' : 'Create Project' }} </h2>
-                <button 
-                    @click="$emit('close')"
-                    class="bg-none border-0 text-white cursor-pointer p-2 rounded transition-all duration-200 ease-in-out "
-                >
-                    <XIcon/>
-                </button>
-            </div>
+    <div class="bg-amber-200 rounded-xl max-w-[600px] w-full max-h-[90vh] flex flex-col shadow-2xl shadow-black/30">
+      <!-- Header -->
+      <div class="flex justify-between items-center p-6 border-b border-gray-300">
+        <h2>{{ isEdit ? 'Update Project' : 'Create Project' }} </h2>
+        <button 
+          @click="$emit('close')"
+          class="bg-none border-0 text-white cursor-pointer p-2 rounded transition-all duration-200 ease-in-out "
+        >
+          <XIcon/>
+        </button>
+      </div>
 
-            <!--    FORM SECTION -->
+      <!--    FORM SECTION -->
 
-            <form @submit.prevent="handleSubmit" class="p-6 overflow-y-auto ">
+      <form @submit.prevent="handleSubmit" class="p-6 overflow-y-auto ">
 
-                <!-- Title -->
-                <div class="form-group">
-                    <label for="Project">Project Title</label>
-                    <input 
-                        type="text" 
-                        v-model="project.title"
-                        placeholder="Enter any project you have built..."
-                    />
+        <!-- Title -->
+        <div class="form-group">
+          <label for="Project">Project Title</label>
+          <input 
+            type="text" 
+            v-model="formData.title"
+            placeholder="Enter any project you have built..."
+          />
 
-                    <span v-if="errors.title"
-                        class="error-text"
-                    >
-                        {{ errors.title }}
-                    </span>
-                </div>
+          <span v-if="errors.title"
+            class="error-text"
+          >
+            {{ errors.title }}
+          </span>
+        </div>
 
-                <div  class="form-group">
-                    <label for="Project">Description</label>
-                    <textarea name="" id="" 
-                        v-model="project.description"
-                        rows="4"
-                        placeholder="Describe your project"
-                        class="input-field"
-                    ></textarea>
-                    
-                    <span v-if="errors.description"
-                        class="error-text"
-                    >
-                        {{ errors.description }}
-                    </span>
-
-                </div>
-
-                <!-- Tech Stack -->
-                <div>
-                    <label for="techStack" class="block text-sm font-medium mb-1">Tech Stack</label>
-                    <input
-                        id="techStack"
-                        v-model="project.techStack"
-                        type="text"
-                        placeholder="e.g., React, Node.js, TypeScript"
-                    />
-                    <span v-if="errors.description"
-                        class="error-text"
-                    >
-                        {{ errors.description }}
-                    </span>
-                </div>
-
-                <!-- GitHub URL -->
-                <div  class="form-group">
-                    <label for="Project">GitHub</label>
-                    <textarea name="" id="" 
-                        v-model="project.githubUrl"
-                        rows="4"
-                        placeholder="Link to your github"
-                        class="input-field"
-                    ></textarea>
-                    
-                    <span v-if="errors.githubUrl"
-                        class="error-text"
-                    >
-                        {{ errors.githubUrl }}
-                    </span>
-
-                </div>
-
-                <!-- Live URL -->
-                <div  class="form-group">
-                    <label for="Project"> Live URL</label>
-                    <textarea name="" id="" 
-                        v-model="project.liveURL"
-                        rows="4"
-                        placeholder="Link to your project"
-                        class="input-field"
-                    ></textarea>
-                    
-                    <span v-if="errors.liveURL"
-                        class="error-text"
-                    >
-                        {{ errors.liveURL }}
-                    </span>
-
-                </div>
-                
-                
-                <!-- Category -->
-            <div  class="form-group">
-                    <label for="Category">Category</label>
-                    <textarea name="" id="" 
-                        v-model="project.category"
-                        rows="4"
-                        placeholder="Enter the project category"
-                        class="input-field"
-                    ></textarea>
-                    
-                    <span v-if="errors.githubUrl"
-                        class="error-text"
-                    >
-                        {{ errors.githubUrl }}
-                    </span>
-
-                </div>
-
-                <!-- Year Built -->
-                <div  class="form-group">
-                    <label for="yearBuilt">Year Built</label>
-                    <textarea name="" id="" 
-                        v-model="project.yearBuilt"
-                        rows="4"
-                        placeholder="Enter year you built this project"
-                        class="input-field"
-                    ></textarea>
-                    
-                    <span v-if="errors.yearBuilt"
-                        class="error-text"
-                    >
-                        {{ errors.yearBuilt }}
-                    </span>
-
-                </div>
-
-                <!-- Image Upload -->
-                <div class="form-group">
-                    <label for="imageURL">Project Images</label>
-                    <!-- Current Images Preview (for edit mode) -->
-                    <div v-if="isEdit &&   project.imageURL && project.imageURL.length > 0" class="mb-2">
-                        <p class="text-sm text-gray-500 mb-1">Current Images:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <img v-for="(img, index) in project.imageURL" :key="index" :src="img.url || ''" alt="Current Image" class="w-20 h-20 object-cover rounded" />
-                        </div>
-                    </div>
-                    <!-- File Input for Multiple Images -->
-                    <input
-                        id="imageURL"
-                        ref="fileInput"
-                        type="file"
-                        accept="image/*"
-                        multiple
-                        @change="handleImageChange"
-                        class="w-full border-dashed border-2 rounded px-2 py-1"
-                    />
-
-                    <!-- New Images Preview -->
-                    <div v-if="imagePreviews.length > 0" class="mt-4 grid grid-cols-3 gap-2">
-                        <div v-for="(preview, index) in imagePreviews" :key="index" class="relative">
-                            <img :src="preview" alt="Preview" class="w-full h-20 object-cover rounded" />
-                            <button @click="removeImage(index)" class="absolute top-1 right-1 bg-red-500 text-white p-1 rounded text-xs"><TrashIcon /></button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Submit Button -->
-                <button
-                    type="submit"
-                    :disabled="loading"
-                    class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
-                >
-                    {{ loading ? 'Saving...' : (isEdit ? "Update" : "Create") }}
-                </button>
-
-                <!-- Global Error -->
-                <div v-if="error" class="mt-4 p-2 bg-red-50 border border-red-200 rounded text-red-600 text-sm">
-                    {{ error }}
-                </div>
-
-
-
-
-            </form>
-            
+        <div  class="form-group">
+          <label for="Project">Description</label>
+          <textarea name="" id="" 
+            v-model="formData.description"
+            rows="4"
+            placeholder="Describe your project"
+            class="input-field"
+          ></textarea>
+          
+          <span v-if="errors.description"
+            class="error-text"
+          >
+            {{ errors.description }}
+          </span>
 
         </div>
 
+        <!-- Tech Stack -->
+        <div>
+          <label for="techStack" class="block text-sm font-medium mb-1">Tech Stack</label>
+          <input
+            id="techStack"
+            v-model="techStackString"
+            type="text"
+            placeholder="e.g., React, Node.js, TypeScript"
+          />
+          <span v-if="errors.techStack"
+            class="error-text"
+          >
+            {{ errors.techStack }}
+          </span>
+        </div>
+
+        <!-- GitHub URL -->
+        <div  class="form-group">
+          <label for="Project">GitHub</label>
+          <textarea name="" id="" 
+            v-model="formData.githubUrl"
+            rows="4"
+            placeholder="Link to your github"
+            class="input-field"
+          ></textarea>
+          
+          <span v-if="errors.githubUrl"
+            class="error-text"
+          >
+            {{ errors.githubUrl }}
+          </span>
+
+        </div>
+
+        <!-- Live URL -->
+        <div  class="form-group">
+          <label for="Project"> Live URL</label>
+          <textarea name="" id="" 
+            v-model="formData.liveURL"
+            rows="4"
+            placeholder="Link to your project"
+            class="input-field"
+          ></textarea>
+          
+          <span v-if="errors.liveURL"
+            class="error-text"
+          >
+            {{ errors.liveURL }}
+          </span>
+
+        </div>
+        
+        
+        <!-- Category -->
+        <div  class="form-group">
+          <label for="Category">Category</label>
+          <textarea name="" id="" 
+            v-model="formData.category"
+            rows="4"
+            placeholder="Enter the project category"
+            class="input-field"
+          ></textarea>
+          
+          <span v-if="errors.category"
+            class="error-text"
+          >
+            {{ errors.category }}
+          </span>
+
+        </div>
+
+        <!-- Year Built -->
+        <div  class="form-group">
+          <label for="yearBuilt">Year Built</label>
+          <textarea name="" id="" 
+            v-model.number="formData.yearBuilt"
+            rows="4"
+            placeholder="Enter year you built this project"
+            class="input-field"
+          ></textarea>
+          
+          <span v-if="errors.yearBuilt"
+            class="error-text"
+          >
+            {{ errors.yearBuilt }}
+          </span>
+
+        </div>
+
+        <!-- Image Upload -->
+        <div class="form-group">
+          <label for="imageURL">Project Images</label>
+          <!-- Current Images Preview (for edit mode) -->
+          <div v-if="isEdit && formData.imageURL && formData.imageURL.length > 0" class="mb-2">
+            <p class="text-sm text-gray-500 mb-1">Current Images:</p>
+            <div class="flex flex-wrap gap-2">
+              <img v-for="(img, index) in formData.imageURL" :key="index" :src="img.url || ''" alt="Current Image" class="w-20 h-20 object-cover rounded" />
+            </div>
+          </div>
+          <!-- File Input for Multiple Images -->
+          <input
+            id="imageURL"
+            ref="fileInput"
+            type="file"
+            accept="image/*"
+            multiple
+            @change="handleImageChange"
+            class="w-full border-dashed border-2 rounded px-2 py-1"
+          />
+
+          <!-- New Images Preview -->
+          <div v-if="imagePreviews.length > 0" class="mt-4 grid grid-cols-3 gap-2">
+            <div v-for="(preview, index) in imagePreviews" :key="index" class="relative">
+              <img :src="preview" alt="Preview" class="w-full h-20 object-cover rounded" />
+              <button @click="removeImage(index)" class="absolute top-1 right-1 bg-red-500 text-white p-1 rounded text-xs"><TrashIcon /></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          :disabled="loading"
+          class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+        >
+          {{ loading ? 'Saving...' : (isEdit ? "Update" : "Create") }}
+        </button>
+
+        <!-- Global Error -->
+        <div v-if="error" class="mt-4 p-2 bg-red-50 border border-red-200 rounded text-red-600 text-sm">
+          {{ error }}
+        </div>
+
+      </form>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -202,7 +196,7 @@ import ProjectAPI from '../../api/projectAPI'
 import { XIcon, TrashIcon } from 'lucide-vue-next'
 
 interface ProjectProps {
-  project: Project
+  project?: Project | null  // Made optional + nullable to fix TS error
   onSuccess?: () => void
   onClose?: () => void;
   onSave?: (data: any) => void;
@@ -222,12 +216,23 @@ const error = ref('')
 const errors = ref<Record<string, string>>({})
 const imageFiles = ref<File[]>([])
 const imagePreviews = ref<string[]>([])
+const formData = ref<Project>({  // Default empty Project for new mode
+  _id: '',
+  title: '',
+  description: '',
+  techStack: [],
+  githubUrl: '',
+  liveURL: '',
+  imageURL: [],
+  category: '',
+  yearBuilt: undefined,
+  createdAt: '',
+  updatedAt: ''
+})
 
-const formData = ref<Project | null>(props.project ? { ...props.project } : null)
-
-// Initial formData
+// Initialize formData from props.project if provided
 if (props.project) {
-    formData.value = { ...props.project }
+  formData.value = { ...props.project }
 }
 
 // Computed for techStackString (get/set for comma-separated input)
@@ -242,11 +247,6 @@ const techStackString = computed({
     formData.value.techStack = techArray
   }
 })
-
-// Type guard for imageURL
-const isImageObject = (imageURL: File | { url: string | null; public_id: string | null } | null): imageURL is { url: string | null; public_id: string | null } => {
-  return imageURL !== null && typeof imageURL === 'object' && 'public_id' in imageURL
-}
 
 // Handle image change (multiple files)
 const handleImageChange = (e: Event) => {
@@ -307,6 +307,18 @@ const validateForm = (): boolean => {
     isValid = false
   }
 
+  // Category validation (optional, but if present, min length)
+  if (formData.value?.category && formData.value.category.trim().length < 2) {
+    errors.value.category = 'Category must be at least 2 characters'
+    isValid = false
+  }
+
+  // Year Built validation (optional, but if present, numeric 1900-2100)
+  if (formData.value?.yearBuilt && (isNaN(Number(formData.value.yearBuilt)) || Number(formData.value.yearBuilt) < 1900 || Number(formData.value.yearBuilt) > 2100)) {
+    errors.value.yearBuilt = 'Year must be a valid number between 1900 and 2100'
+    isValid = false
+  }
+
   return isValid
 }
 
@@ -322,55 +334,46 @@ const isValidUrl = (string: string): boolean => {
 
 // Call validation in submit handler
 const handleSubmit = async (): Promise<void> => {
-    if (!validateForm()) return
+  if (!validateForm()) return
 
-    // Ensure formData is present
-    if (!formData.value) {
-        error.value = 'Form data is missing.'
-        return
+  loading.value = true
+  error.value = ''
+
+  try {
+    // Create FormData and use the concrete value to avoid null checks everywhere
+    const fd = new FormData()
+
+    fd.append('title', formData.value.title ?? '')
+    fd.append('description', formData.value.description ?? '')
+    // Send tech stack as JSON so backend receives an array shape reliably
+    fd.append('techStack', JSON.stringify(formData.value.techStack ?? []))
+    fd.append('githubUrl', formData.value.githubUrl ?? '')
+    fd.append('liveURL', formData.value.liveURL ?? '')
+    if (formData.value.category) fd.append('category', formData.value.category)
+    if (formData.value.yearBuilt !== undefined && formData.value.yearBuilt !== null) fd.append('yearBuilt', String(formData.value.yearBuilt))
+
+    // Append multiple images (include filename)
+    imageFiles.value.forEach((file) => {
+      fd.append('imageURL', file, file.name)
+    })
+
+    let response
+    if (isEdit.value && formData.value._id) {
+      response = await ProjectAPI.updateProject(formData.value._id, fd)
+    } else {
+      response = await ProjectAPI.createProject(fd)
     }
 
-    loading.value = true
-    error.value = ''
-
-    try {
-        // Create FormData and use the concrete value to avoid null checks everywhere
-        const fd = new FormData()
-        const data = formData.value
-
-        fd.append('title', data.title ?? '')
-        fd.append('description', data.description ?? '')
-        // Send tech stack as JSON so backend receives an array shape reliably
-        fd.append('techStack', JSON.stringify(data.techStack ?? []))
-        fd.append('githubUrl', data.githubUrl ?? '')
-        fd.append('liveURL', data.liveURL ?? '')
-        if (data.category) fd.append('category', data.category)
-        if (data.yearBuilt !== undefined && data.yearBuilt !== null) fd.append('yearBuilt', String(data.yearBuilt))
-
-        // Append multiple images (include filename)
-        imageFiles.value.forEach((file) => {
-            fd.append('imageURL', file, file.name)
-        })
-
-        let response
-        if (isEdit.value && data._id) {
-            response = await ProjectAPI.updateProject(data._id, fd)
-        } else {
-            response = await ProjectAPI.createProject(fd)
-        }
-
-        console.log('Project saved!', response)
-        // Emit save event and call optional onSuccess, then close modal
-        emit('save', response)
-        if (props.onSuccess) props.onSuccess()
-        emit('close')
-    } catch (err: any) {
-        console.error('Error saving project:', err)
-        error.value = err?.message || 'Failed to save project. Please try again.'
-    } finally {
-        loading.value = false
-    }
-
+    console.log('Project saved!', response)
+    // Emit save event and call optional onSuccess, then close modal
+    emit('save', response)
+    if (props.onSuccess) props.onSuccess()
+    emit('close')
+  } catch (err: any) {
+    console.error('Error saving project:', err)
+    error.value = err?.message || 'Failed to save project. Please try again.'
+  } finally {
+    loading.value = false
+  }
 }
-
 </script>

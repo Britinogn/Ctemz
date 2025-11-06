@@ -4,25 +4,10 @@
     class="relative py-20 bg-[var(--bg-primary)] text-[var(--text-primary)] overflow-hidden"
   >
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <!-- Heading -->
-      <!-- <div class="flex justify-between items-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-bold">
-          Glimpse of <span class="text-[var(--color-primary)]">My Projects</span>
-        </h2>
-        <router-link
-          to="/projects"
-          class="text-[var(--color-primary)] hover:underline font-medium"
-        >
-          View All →
-        </router-link>
-      </div> -->
-
-      <!-- Loading State -->
       <div v-if="isLoading" class="text-center text-[var(--text-secondary)] py-20 animate-pulse">
         Loading projects...
       </div>
 
-      <!-- Slider -->
       <Swiper
         v-else
         :modules="[Pagination, Autoplay]"
@@ -35,7 +20,7 @@
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 3.2 }
         }"
-        pagination
+        :pagination="{ clickable: true }"
         :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }"
         class="project-swiper"
       >
@@ -65,6 +50,9 @@
 import { ref, onMounted } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/autoplay'
 import ProjectAPI from '@/api/projectAPI'
 import type { Project } from '@/types/script'
 
@@ -98,7 +86,6 @@ onMounted(async () => {
   opacity: 1;
 }
 
-/* Subtle zoom effect */
 .swiper-slide {
   transform: scale(0.95);
   transition: transform 400ms ease, box-shadow 400ms ease;
