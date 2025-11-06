@@ -57,7 +57,7 @@ const router = createRouter({
 });
 
 /* ✅ Route Guard */
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
   const isAuthenticated = auth.isAuthenticated()
 
   if (to.meta.requiresAuth && !isAuthenticated) {
