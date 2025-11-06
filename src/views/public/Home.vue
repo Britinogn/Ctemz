@@ -6,6 +6,7 @@
     <!-- <ProjectsFullSlider />
     <SkillsSlider />
     <ExperienceSection /> -->
+    <ProjectsSection />
     <ContactSection />
 
     
@@ -18,4 +19,5 @@ import HeroSection from '@/components/sections/HeroSection.vue';
 import ProjectSlider from '@/components/sliders/ProjectSlider.vue';
 import AboutSection from '@/components/sections/AboutSection.vue';
 import ContactSection from '@/components/sections/ContactSection.vue';
+import ProjectsSection from '@/components/sections/ProjectsSection.vue';
 </script>

@@ -12,7 +12,7 @@
       
       <!-- Section Title -->
       <div class="text-center mb-16 animate-fade-in">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r from-orange-400 via-yellow-300 to-orange-500 bg-clip-text text-transparent mb-4">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold bg-gradient-to-r text-[-var(--text-primary)] bg-clip-text mb-4">
           About Me
         </h1>
         <div class="w-24 h-1 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto rounded-full"></div>
@@ -23,64 +23,70 @@
         
         <!-- Left Content - Text -->
         <div class="w-full md:w-1/2 space-y-6 animate-slide-in-left">
-          
-          <div class="space-y-4">
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-              Hey, I'm 
-              <span class="bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
-                Tino Ctemz
-              </span> 
-              <span class="inline-block animate-wave">🪖</span>
-            </h2>
+        
+            <div class="space-y-4">
+                <h2 class="text-3xl md:text-4xl lg:text-6xl font-extrabold leading-tight">
+                Hey, I'm 
+                <span class="bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent">
+                    Tino Ctemz
+                </span> 
+                <span class="inline-block animate-wave ">🪖 ⚙️ </span>
+                </h2>
 
-            <p class="text-xl md:text-2xl text-gray-300 font-semibold leading-relaxed">
-              A Freelance 
-              <span class="text-orange-400">Web Designer</span> & 
-              <span class="text-orange-400">Developer</span> based in 
-              <span class="text-yellow-400">Agbor, Nigeria</span>.
+                <p class="text-xl md:text-2xl text-gray-300 font-semibold leading-relaxed">
+                    A Freelance 
+                    <span class="text-orange-400">Web Designer</span> & 
+                    <span class="text-orange-400">Developer</span> based in 
+                    <span class="text-yellow-400">Agbor, Nigeria</span>.
+                </p>
+            </div>
+
+            <p class="text-lg text-gray-400 leading-relaxed">
+                I specialize in crafting 
+                <span class="text-orange-400 font-semibold">intuitive</span>, 
+                <span class="text-orange-400 font-semibold">high-performance</span> web and mobile applications, 
+                from sleek portfolios to robust e-commerce platforms.
             </p>
-          </div>
 
-          <p class="text-lg text-gray-400 leading-relaxed">
-            I specialize in crafting 
-            <span class="text-orange-400 font-semibold">intuitive</span>, 
-            <span class="text-orange-400 font-semibold">high-performance</span> web and mobile applications, 
-            from sleek portfolios to robust e-commerce platforms.
-          </p>
+            <div class="p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl">
+                <p class="text-gray-300 leading-relaxed">
+                Passionate about turning ideas into digital realities, I blend creativity with technical prowess to solve real-world challenges. Whether it's diving into backend proxies, hyping up DevFest events, or motivating the grind toward that first big freelance win, I'm all in on building what lasts.
+                </p>
+            </div>
 
-          <div class="p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl">
-            <p class="text-gray-300 leading-relaxed">
-              Passionate about turning ideas into digital realities, I blend creativity with technical prowess to solve real-world challenges. Whether it's diving into backend proxies, hyping up DevFest events, or motivating the grind toward that first big freelance win, I'm all in on building what lasts.
-            </p>
-          </div>
+            <marquee behavior="scroll" direction="left" scrollamount="6" style="width: 100%; overflow: hidden; white-space: nowrap;">
+                <div style="display: inline-flex; gap: 1rem; align-items: center;">
+                    <span class="px-4 py-2 bg-orange-500/20 text-orange-400 rounded-full text-sm font-semibold border border-orange-500/30">
+                        React
+                    </span>
+                    <span class="px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold border border-green-500/30">
+                        Vue
+                    </span>
+                    <span class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold border border-blue-500/30">
+                        TypeScript
+                    </span>
+                    <span class="px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold border border-purple-500/30">
+                        Github
+                    </span>
 
-          <div class="flex flex-wrap gap-3">
-            <span class="px-4 py-2 bg-orange-500/20 text-orange-400 rounded-full text-sm font-semibold border border-orange-500/30">
-              React
-            </span>
-            <span class="px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold border border-green-500/30">
-              Vue
-            </span>
-            <span class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold border border-blue-500/30">
-              TypeScript
-            </span>
-            <span class="px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold border border-purple-500/30">
-              Node.js
-            </span>
-          </div>
-
-          <div class="flex gap-4 pt-4">
-            <button class="px-8 py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-orange-500/50">
-              View Projects
-            </button>
-            <button class="px-8 py-3 bg-white/10 backdrop-blur-sm text-white font-bold rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
-              Contact Me
-            </button>
-          </div>
+                    <span class="px-4 py-2 bg-orange-500/20 text-orange-400 rounded-full text-sm font-semibold border border-orange-500/30">
+                        Php
+                    </span>
+                    <span class="px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold border border-green-500/30">
+                        Python
+                    </span>
+                    <span class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold border border-blue-500/30">
+                        MongoDB
+                    </span>
+                    <span class="px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold border border-purple-500/30">
+                        Node.js
+                    </span>
+                </div>
+            </marquee>
         </div>
 
         <!-- Right Content - Image -->
-        <div class="w-full md:w-1/2 flex justify-center items-center animate-slide-in-right">
+        <div class="w-90 lg:w-90 md:w-1/2 flex justify-center items-center animate-slide-in-right">
           <div class="relative group">
             
             <!-- Decorative Elements -->

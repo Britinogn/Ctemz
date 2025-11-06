@@ -58,7 +58,7 @@
           <img 
             :src="project.imageURL?.[0]?.url ||  'https://iages.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' " 
             :key="project._id"
-            :alt="project.title" 
+            alt="project.title" 
             class="rounded-lg max-w-full h-auto shadow-2xl hover:scale-105 transition-transform duration-300 relative z-10"
           />
         </div>
