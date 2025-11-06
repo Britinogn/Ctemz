@@ -3,7 +3,7 @@
     //import { computed, onMounted } from 'vue';
     import { useRouter  } from 'vue-router';
     import useProjects from '@/hooks/useProjects';  // Fixed import path (assuming file is useProjects.ts)
-    import { XIcon } from 'lucide-vue-next';
+    //import { XIcon } from 'lucide-vue-next';
     
     // Use the composable hook directly
     const {projects , loading, error ,  refetch } = useProjects();
