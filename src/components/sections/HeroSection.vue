@@ -83,14 +83,14 @@
 
     <!-- Right Image -->
     <div
-      class="relative z-10 w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0 animate-fade-in-delay"
+      class="relative z-10 w-full md:w-1/2 pt-10 flex justify-center items-center mb-10 md:mb-0 animate-fade-in-delay"
     >
-      <div class="relative group">
+      <div class="relative group ">
         <!-- Rotating Border Effect -->
         <div class="absolute -inset-4 bg-gradient-to-r from-orange-500 via-yellow-500 to-orange-500 rounded-full blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 animate-spin-slow"></div>
         
         <!-- Image Container -->
-        <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-orange-500/30 shadow-2xl">
+        <div class="relative w-72  h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-orange-500/30 shadow-2xl">
           <img
             src="/src/assets/images/tinogn.jpg"
             alt="Tino Nova portrait"
