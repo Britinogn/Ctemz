@@ -1,7 +1,7 @@
 <template>
   <section
     id="hero"
-    class="relative min-h-screen flex flex-col-reverse md:flex-row items-center justify-center bg-[var(--bg-primary)] text-[var(--text-primary)] overflow-hidden px-8 md:px-16"
+    class="relative px-8 min-h-screen flex flex-col-reverse md:flex-row items-center justify-center bg-[var(--bg-primary)] text-[var(--text-primary)] overflow-hidden md:px-16"
   >
     <!-- Orange Glow Background -->
     <div
@@ -37,7 +37,7 @@
           @click="scrollToContact"
           class="btn btn-outline"
         >
-          Contact Me
+          Hire Me
         </button>
       </div>
     </div>

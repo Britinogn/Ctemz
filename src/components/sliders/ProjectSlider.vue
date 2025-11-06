@@ -24,7 +24,7 @@
         :autoplay="{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }"
         class="project-swiper"
       >
-        <SwiperSlide
+        <!-- <SwiperSlide
           v-for="project in projects"
           :key="project._id"
           class="rounded-xl overflow-hidden shadow-lg border border-[var(--color-border)] hover:border-[var(--color-primary)] transition-all duration-300 cursor-grab active:cursor-grabbing group"
@@ -40,7 +40,33 @@
               class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             ></div>
           </div>
+        </SwiperSlide> -->
+
+        <SwiperSlide
+          v-for="project in projects"
+          :key="project._id"
+          class="rounded-xl overflow-hidden shadow-lg border border-[var(--color-border)] hover:border-[var(--color-primary)] transition-all duration-300 cursor-grab active:cursor-grabbing group"
+        >
+          
+          <!-- Right Image (first on mobile, second on desktop) -->
+        <div class="order-1 md:order-none md:block relative p-4 bg-white/5 rounded-xl ring-2 ring-white/20 shadow-xl">
+          <!-- Decorative Frame/Backdrop -->
+          <div class="absolute inset-0 bg-linear-to-br from-transparent to-white/70 backdrop-blur-md rounded-xl -z-10 transform -rotate-2 scale-105"></div>
+          <div class="absolute -top-6 -left-6 w-10 h-10 bg-[-var(--color-primary)] rounded-full opacity-50 blur-sm"></div>
+          <div class="absolute -bottom-6 -right-6 w-10 h-10 bg-purple-300 rounded-full opacity-50 blur-sm"></div>
+          <div class="absolute top-4 right-4 w-6 h-6 bg-green-300 rounded-full opacity-40"></div>
+          <img 
+            :src="project.imageURL?.[0]?.url ||  'https://iages.pexels.com/photos/4145190/pexels-photo-4145190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' " 
+            :key="project._id"
+            :alt="project.title" 
+            class="rounded-lg max-w-full h-auto shadow-2xl hover:scale-105 transition-transform duration-300 relative z-10"
+          />
+        </div>
+
         </SwiperSlide>
+<!-- 
+        <div class="absolute inset-0 bg-linear-to-br from-orange-100/20 to-black-200/20 z-0"></div> -->
+        
       </Swiper>
     </div>
   </section>
