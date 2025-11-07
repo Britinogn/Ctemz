@@ -49,7 +49,7 @@
         >
           
           <!-- Right Image (first on mobile, second on desktop) -->
-        <div class="order-1 md:order-none md:block relative p-4 bg-white/5 rounded-xl ring-2 ring-white/20 shadow-xl">
+        <div class="order-1 md:order-0 md:block relative p-4 bg-white/5 rounded-xl ring-2 ring-white/20 shadow-xl">
           <!-- Decorative Frame/Backdrop -->
           <div class="absolute inset-0 bg-linear-to-br from-transparent to-white/70 backdrop-blur-md rounded-xl -z-10 transform -rotate-2 scale-105"></div>
           <div class="absolute -top-6 -left-6 w-10 h-10 bg-[-var(--color-primary)] rounded-full opacity-50 blur-sm"></div>
@@ -68,6 +68,7 @@
         <div class="absolute inset-0 bg-linear-to-br from-orange-100/20 to-black-200/20 z-0"></div> -->
         
       </Swiper>
+      
     </div>
   </section>
 </template>

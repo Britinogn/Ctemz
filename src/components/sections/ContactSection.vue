@@ -1,82 +1,75 @@
 <template>
-  <section  id="contact"  class="py-16 bg-gray-900 text-white">
-    <div class="max-w-2xl mx-auto px-4">
-      <!-- Section Header -->
+  <section id="contact" class="py-20 bg-black text-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <!-- Header -->
       <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-white  bg-clip-text text-transparent">
-          Get In Touch
-        </h2>
-        <p class="text-gray-400 text-lg max-w-md mx-auto">
-          Have a project in mind? Let's discuss how I can bring it to life. Drop a message below.
+        <h1 class="text-5xl font-extrabold mb-4 text-white">Contact</h1>
+        <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
+        <p class="text-gray-400 mt-4">
+          Have a question or want to work together?<br />
+          <span class="text-orange-400 font-semibold">Let's Make It Happen!</span>
         </p>
       </div>
 
       <!-- Contact Form -->
-      <form @submit.prevent="handleSubmit" class="space-y-6 bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 shadow-lg">
-        <!-- Name -->
-        <div>
-          <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">Full Name</label>
+      <form @submit.prevent="handleSubmit" class="space-y-6">
+        <!-- Name & Email -->
+        <div class="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0">
           <input
-            id="name"
             v-model="formData.name"
             type="text"
-            required
-            class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-orange-500 focus:outline-none transition-colors"
-            placeholder="Enter your full name"
+            placeholder="Full Name"
+            
+            class="w-full md:w-1/2 bg-gray-900 border border-gray-700 px-4 py-3 text-white rounded-lg focus:outline-none focus:border-orange-500"
           />
-        </div>
 
-        <!-- Email -->
-        <div>
-          <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">Email Address</label>
           <input
-            id="email"
             v-model="formData.email"
             type="email"
-            required
-            class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-orange-500 focus:outline-none transition-colors"
-            placeholder="your@email.com"
+            placeholder="Email Address"
+            
+            class="w-full md:w-1/2 bg-gray-900 border border-gray-700 px-4 py-3 text-white rounded-lg focus:outline-none focus:border-orange-500"
           />
         </div>
 
         <!-- Subject -->
-        <div>
-          <label for="subject" class="block text-sm font-semibold text-gray-300 mb-2">Subject</label>
-          <input
-            id="subject"
-            v-model="formData.subject"
-            type="text"
-            class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-orange-500 focus:outline-none transition-colors"
-            placeholder="Brief subject line"
-          />
-        </div>
+        <input
+          v-model="formData.subject"
+          type="text"
+          placeholder="Subject"
+          
+          class="w-full bg-gray-900 border border-gray-700 px-4 py-3 text-white rounded-lg focus:outline-none focus:border-orange-500"
+        />
 
         <!-- Message -->
-        <div>
-          <label for="message" class="block text-sm font-semibold text-gray-300 mb-2">Message</label>
-          <textarea
-            id="message"
-            v-model="formData.message"
-            required
-            rows="5"
-            class="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:border-orange-500 focus:outline-none transition-colors resize-vertical"
-            placeholder="Tell me about your project..."
-          ></textarea>
-        </div>
+        <textarea
+          v-model="formData.message"
+          placeholder="Your Message"
+          
+          rows="5"
+          class="w-full bg-gray-900 border border-gray-700 px-4 py-3 text-white rounded-lg focus:outline-none focus:border-orange-500 resize-y min-h-[100px] max-h-[180px]"
+        ></textarea>
 
         <!-- Submit Button -->
         <button
           type="submit"
           :disabled="loading"
-          class="w-full px-6 py-4 bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-bold rounded-lg hover:from-orange-600 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-orange-500/50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+          class="w-50 md:w-1/2 mx-auto cursor-pointer block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <span v-if="loading" class="animate-spin rounded-full h-5 w-5 border-b-2 border-black"></span>
-          <span>{{ loading ? 'Sending...' : 'Send Message' }}</span>
+          {{ loading ? 'Sending...' : 'Send Message' }}
         </button>
       </form>
 
-      <!-- Success/Error Message -->
-      <div v-if="status.message" :class="['mt-6 p-4 rounded-lg text-center', status.type === 'success' ? 'bg-green-500/20 border border-green-500/30 text-green-400' : 'bg-red-500/20 border border-red-500/30 text-red-400']">
+      <!-- Status Message -->
+      <div
+        v-if="status.message"
+        :class="[
+          'mt-6 text-center font-semibold py-3 rounded-lg',
+          status.type === 'success'
+            ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+            : 'bg-red-500/20 text-red-400 border border-red-500/30'
+        ]"
+      >
         {{ status.message }}
       </div>
     </div>
@@ -84,19 +77,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import ContactAPI from '@/api/contactAPI'; // Adjust path to your API
+import { ref } from 'vue'
+import ContactAPI from '@/api/contactAPI'
 
 interface FormData {
-  name: string;
-  email: string;
-  subject?: string;
-  message: string;
+  name: string
+  email: string
+  subject: string
+  message: string
 }
 
 interface Status {
-  message: string;
-  type: 'success' | 'error';
+  message: string
+  type: 'success' | 'error'
 }
 
 const formData = ref<FormData>({
@@ -104,39 +97,35 @@ const formData = ref<FormData>({
   email: '',
   subject: '',
   message: ''
-});
+})
 
-const loading = ref(false);
-const status = ref<Status>({ message: '', type: 'success' });
+const loading = ref(false)
+const status = ref<Status>({ message: '', type: 'success' })
 
 const handleSubmit = async () => {
-  if (!formData.value.name || !formData.value.email || !formData.value.message) {
-    status.value = { message: 'Please fill in all required fields.', type: 'error' };
-    return;
+  if (!formData.value.name || !formData.value.email || !formData.value.subject || !formData.value.message) {
+    status.value = { message: 'Please fill in all required fields.', type: 'error' }
+    return
   }
 
-  loading.value = true;
-  status.value.message = '';
+  loading.value = true
+  status.value.message = ''
 
   try {
-    // Prepare data for API (adjust based on your backend expectations)
-    const submitData = {
-      name: formData.value.name,
-      email: formData.value.email,
-      subject: formData.value.subject || undefined,
-      message: formData.value.message
-    };
-
-    await ContactAPI.createContact(submitData);
-    status.value = { message: 'Message sent successfully! I\'ll get back to you soon.', type: 'success' };
-
-    // Reset form
-    formData.value = { name: '', email: '', subject: '', message: '' };
+    await ContactAPI.createContact(formData.value)
+    status.value = {
+      message: "Message sent successfully! I'll get back to you soon.",
+      type: 'success'
+    }
+    formData.value = { name: '', email: '', subject: '', message: '' }
   } catch (error) {
-    console.error('Submission error:', error);
-    status.value = { message: 'Failed to send message. Please try again.', type: 'error' };
+    console.error('Error submitting form:', error)
+    status.value = {
+      message: 'Failed to send message. Please try again later.',
+      type: 'error'
+    }
   } finally {
-    loading.value = false;
+    loading.value = false
   }
-};
+}
 </script>

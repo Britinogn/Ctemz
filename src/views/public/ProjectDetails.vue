@@ -76,27 +76,27 @@ const goForward = () => {
 
             <!-- Loading State -->
             <div v-if="loading" class="flex justify-center items-center min-h-[60vh]">
-            <div class="relative">
-            <div class="w-16 h-16 border-4 border-orange-200/50 border-t-orange-400 rounded-full animate-spin"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-8 h-8 bg-orange-500/20 rounded-full animate-pulse"></div>
-            </div>
-            </div>
+                <div class="relative">
+                    <div class="w-16 h-16 border-4 border-orange-200/50 border-t-orange-400 rounded-full animate-spin"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-8 h-8 bg-orange-500/20 rounded-full animate-pulse"></div>
+                    </div>
+                </div>
             </div>
 
             <!-- Error State -->
             <div v-else-if="error" class="min-h-[60vh] flex items-center justify-center p-4">
-            <div class="bg-gray-800/50 backdrop-blur-sm border border-red-500/30 p-6 rounded-xl shadow-2xl max-w-md w-full text-center">
-            <ExclamationCircleIcon class="h-6 w-6 text-red-400 mx-auto mb-4" />
-            <h3 class="text-lg font-semibold text-white mb-2">Something went wrong</h3>
-            <p class="text-gray-300 mb-4">{{ error }}</p>
-            <button
-                @click="refetch"
-                class="px-4 py-2 bg-linear-to-r from-red-500 to-orange-500 text-white font-semibold rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300"
-            >
-                Retry
-            </button>
-            </div>
+                <div class="bg-gray-800/50 backdrop-blur-sm border border-red-500/30 p-6 rounded-xl shadow-2xl max-w-md w-full text-center">
+                    <ExclamationCircleIcon class="h-6 w-6 text-red-400 mx-auto mb-4" />
+                    <h3 class="text-lg font-semibold text-white mb-2">Something went wrong</h3>
+                    <p class="text-gray-300 mb-4">{{ error }}</p>
+                    <button
+                        @click="refetch"
+                        class="px-4 py-2 bg-linear-to-r from-red-500 to-orange-500 text-white font-semibold rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300"
+                    >
+                        Retry
+                    </button>
+                </div>
             </div>
 
             <!-- Project Details -->
