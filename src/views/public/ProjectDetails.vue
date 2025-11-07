@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router';
-import { ref ,computed  } from 'vue';
+import { ref   } from 'vue';
 import useProjects from '@/hooks/useProjects'; // Adjust path as needed
 import { Project } from '@/types/script';
 import { ExclamationCircleIcon } from '@heroicons/vue/24/outline'; // Assuming Heroicons; install if needed
@@ -13,7 +13,7 @@ const projectId = route.params.id as string;
 const { project, projects, loading, error, refetch } = useProjects(projectId);
 
 // List of all projects (fallback empty array to avoid "Cannot find name 'allProjects'" errors)
-const allProjects = ref<Project[]>([]);
+//const allProjects = ref<Project[]>([]);
 
 // Image error handling
 const imageErrors = ref<Record<string, boolean>>({});
