@@ -1,9 +1,9 @@
 <!-- App.vue -->
 <template>
   <AuthProvider>
-    <Navbar />
+    <Navbar v-if="!$route.meta.hideNavbar" />
     <RouterView  />
-    <Footer />
+    <Footer v-if="!$route.meta.hideFooter" />
   </AuthProvider>
 </template>
 

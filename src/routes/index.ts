@@ -34,16 +34,26 @@ const routes: RouteRecordRaw[] = [
   { path: "/github", name: "Github", component: Github },
 
   // Admin
-  { path: "/login", name: "Login", component: Login },
+  { path: "/login", name: "Login", component: Login ,
+    meta: { hideFooter: true, hideNavbar: true } 
+  },
   {
     path: "/dashboard",
     component: AdminLayout,
     meta: { requiresAuth: true },
     children: [
-      { path: "", name: "Dashboard", component: Dashboard },
-      { path: "projects", name: "ManageProjects", component: ManageProjects },
-      { path: "blogs", name: "ManageBlogs", component: ManageBlogs },
-      { path: "contact", name: "ManageContact", component: ManageContact },
+      { path: "", name: "Dashboard", component: Dashboard ,
+        meta: { hideFooter: true, hideNavbar: true } 
+      },
+      { path: "projects", name: "ManageProjects", component: ManageProjects ,
+        meta: { hideFooter: true, hideNavbar: true } 
+      },
+      { path: "blogs", name: "ManageBlogs", component: ManageBlogs, 
+        meta: { hideFooter: true, hideNavbar: true } 
+      },
+      { path: "contact", name: "ManageContact", component: ManageContact,
+        meta: { hideFooter: true, hideNavbar: true } 
+      },
     ],
   },
 
