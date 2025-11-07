@@ -20,8 +20,10 @@ const imageErrors = ref<Record<string, boolean>>({});
 
 const getProjectImage = (project: Project) => {
     const url = project.imageURL?.[0]?.url;
-    return url && typeof url === 'string' ? url : 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400&q=80';
+    return url && typeof url === 'string' ? url : '';
 };
+
+
 
 const handleImageError = (event: Event, project: Project) => {
     const img = event.target as HTMLImageElement;

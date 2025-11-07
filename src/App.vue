@@ -16,5 +16,7 @@
 <style>
 html {
   scroll-behavior: smooth;
+  scrollbar-color: orange;
+  scroll-padding-top: 80px;
 }
 </style>

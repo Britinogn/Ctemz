@@ -2,8 +2,10 @@
   <section id="contact" class="py-20 bg-black text-white">
     <div class="max-w-3xl mx-auto px-6">
       <!-- Header -->
-      <div class="text-center mb-12">
-        <h1 class="text-5xl font-extrabold mb-4 text-white">Contact</h1>
+      <div class="text-center mb-16 animate-fade-in">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4">
+          Contact
+        </h1>
         <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
         <p class="text-gray-400 mt-4">
           Have a question or want to work together?<br />
