@@ -160,19 +160,20 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import type { GithubStats } from '@/types/script'
+import api from '@/api/api'
 
 const stats = ref<GithubStats | null>(null)
 const loading = ref(false)
 const error = ref<string | null>(null)
 
-const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000/api'
+// const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000/api'
 
 async function fetchStats(useCache = true) {
   const endpoint = useCache ? '/github/cached' : '/github'
   try {
     loading.value = true
     error.value = null
-    const response = await axios.get(`${API_BASE}${endpoint}`)
+    const response = await axios.get(`${api}${endpoint}`)
     stats.value = response.data.stats
   } catch (err: any) {
     console.error('Error fetching GitHub stats:', err)
