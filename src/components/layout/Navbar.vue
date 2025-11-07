@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import Button from '@/components/ui/Button.vue'
 
 const router = useRouter()
 const route = useRoute()
@@ -9,66 +8,100 @@ const mobileMenuOpen = ref(false)
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'Projects', path: '/projects' },
+  // { name: 'About', path: '/about' },
+  // { name: 'Projects', path: '/projects' },
   { name: 'GitHub', path: '/github' },
-  { name: 'Blog', path: '/blogs' }
+  //{ name: 'Blog', path: '/blogs' }
 ]
 
-const isActive = (path: string) => route.path === path
+function isActive(path: string) {
+  return route.path === path
+}
 
-const toggleMobileMenu = () => {
+function toggleMobileMenu() {
   mobileMenuOpen.value = !mobileMenuOpen.value
 }
 
-const closeMobileMenu = () => {
+function closeMobileMenu() {
   mobileMenuOpen.value = false
+}
+
+function navigateToBlog() {
+  router.push('/blogs')
+  closeMobileMenu()
 }
 </script>
 
 <template>
-  <nav class="sticky top-0 z-50 bg-[--color-surface]/80 backdrop-blur-lg border-b border-[--color-border]">
+  <nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-xl border-b border-gray-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-center items-center h-16 sm:h-20">
+      <div class="flex justify-between items-center h-16 sm:h-20">
         
-        <!-- Desktop Navigation - Centered -->
+        <!-- Logo/Brand -->
+        <router-link to="/" class="flex items-center space-x-3 group">
+          <div class="relative w-10 h-10 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+            <span class="text-black font-bold text-lg">T</span>
+            <!-- Glow Effect -->
+            <div class="absolute inset-0 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
+          </div>
+          <span class="text-white font-bold text-xl hidden sm:inline group-hover:text-orange-400 transition-colors">
+            Tino Ctemz
+          </span>
+        </router-link>
+
+        <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center gap-8">
           <router-link
             v-for="link in navLinks"
             :key="link.path"
             :to="link.path"
-            class="text-[--color-text-secondary] hover:text-[--color-primary] transition-colors duration-300 font-medium relative group"
-            :class="{ '!text-[--color-primary]': isActive(link.path) }"
+            class="relative text-gray-400 hover:text-white transition-colors duration-300 font-medium text-sm group"
+            :class="{ '!text-orange-400': isActive(link.path) }"
           >
             {{ link.name }}
+            <!-- Underline Effect -->
             <span 
-              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[--color-primary] transition-all duration-300 group-hover:w-full"
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-yellow-500 transition-all duration-300 group-hover:w-full"
               :class="{ '!w-full': isActive(link.path) }"
             />
           </router-link>
           
           <!-- Contact Button -->
-          <!-- <Button variant="primary" size="sm" @click="router.push('/contact')">
-            Contact
-          </Button> -->
+          <button
+            @click="navigateToBlog"
+            class="px-6 py-2.5 cursor-pointer bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-bold rounded-full hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300"
+          >
+            Blog
+          </button>
         </div>
 
-        <!-- Mobile Menu Button - Centered -->
+        <!-- Mobile Menu Button -->
         <button
           @click="toggleMobileMenu"
-          class="md:hidden p-2 text-[--color-text-secondary] hover:text-[--color-primary] transition-colors"
+          class="md:hidden p-2 cursor-pointer text-gray-400 hover:text-orange-400 transition-colors relative"
           aria-label="Toggle menu"
         >
-          <svg v-if="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+          <!-- Hamburger Icon -->
+          <div class="w-6 h-5 flex flex-col justify-between">
+            <span 
+              class="w-full h-0.5 bg-current transform transition-all duration-300"
+              :class="mobileMenuOpen ? 'rotate-45 translate-y-2' : ''"
+            ></span>
+            <span 
+              class="w-full h-0.5 bg-current transition-all duration-300"
+              :class="mobileMenuOpen ? 'opacity-0' : ''"
+            ></span>
+            <span 
+              class="w-full h-0.5 bg-current transform transition-all duration-300"
+              :class="mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''"
+            ></span>
+          </div>
         </button>
       </div>
     </div>
 
-    <!-- Mobile Menu - Centered -->
+    <!-- Mobile Menu -->
+    <!-- Mobile Menu -->
     <transition
       enter-active-class="transition duration-300 ease-out"
       enter-from-class="opacity-0 -translate-y-4"
@@ -79,30 +112,33 @@ const closeMobileMenu = () => {
     >
       <div
         v-if="mobileMenuOpen"
-        class="md:hidden border-t border-[--color-border] bg-[--color-surface]"
+        class="absolute left-0 right-0 top-full md:hidden border-t border-gray-800 bg-black/95 backdrop-blur-xl shadow-lg z-40"
       >
-        <div class="px-4 py-6 space-y-4 flex flex-col items-center">
+        <div class="px-4 py-6 space-y-4">
           <router-link
             v-for="link in navLinks"
             :key="link.path"
             :to="link.path"
             @click="closeMobileMenu"
-            class="text-[--color-text-secondary] hover:text-[--color-primary] transition-colors duration-300 font-medium text-lg"
-            :class="{ '!text-[--color-primary]': isActive(link.path) }"
+            class="block text-gray-400 hover:text-orange-400 transition-colors duration-300 font-medium text-lg py-2 px-4 rounded-lg hover:bg-gray-900"
+            :class="{ '!text-orange-400 bg-gray-900': isActive(link.path) }"
           >
             {{ link.name }}
           </router-link>
-          
-          <Button 
-            variant="primary" 
-            size="md" 
-            @click="router.push('/contact'); closeMobileMenu()"
-            class="w-full max-w-xs"
+
+          <button
+            @click="navigateToBlog"
+            class="w-full px-6 cursor-pointer py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
           >
-            Contact
-          </Button>
+            Blog
+          </button>
         </div>
       </div>
     </transition>
+
   </nav>
 </template>
+
+<style scoped>
+/* Additional animations if needed */
+</style>

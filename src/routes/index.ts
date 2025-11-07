@@ -27,7 +27,7 @@ const routes: RouteRecordRaw[] = [
   // Public
   { path: "/", name: "Home", component: Home },
   // { path: "/projects", name: "Projects", component: Projects },
-  { path: "/projects/:id", name: "ProjectDetails", component: ProjectDetails },
+  { path: "/projects/:id", name: "ProjectDetails", component: ProjectDetails , props: true,},
   { path: "/blogs", name: "Blogs", component: Blogs },
   // { path: "/blogs/:id", name: "BlogDetail", component: BlogDetail },
   // { path: "/contact", name: "Contact", component: Contact },
