@@ -11,6 +11,14 @@
   import AuthProvider from "./provider/authProvider.vue";
   import Navbar from "./components/layout/Navbar.vue";
   import Footer from "./components/layout/Footer.vue";
+
+import { onMounted } from 'vue'
+import { useLenis } from './plugins/lenis'
+
+onMounted(() => {
+  useLenis() // Only one instance
+})
+
 </script>
 
 <style>

@@ -14,7 +14,7 @@ interface ContactResponse {
 }
 
 async function getAllContacts(): Promise<Contact[]> {
-    const res: ContactsResponse = await api.get('/contacts');
+    const res: ContactsResponse = await api.get('/contact');
     return (res.contacts || res.data || []) as Contact[];
 }
 
@@ -24,17 +24,17 @@ async function getContactById(id: string): Promise<Contact> {
 }
 
 async function createContact(ContactData: Partial<Contact> | FormData): Promise<Contact> {
-    const res: ContactResponse = await api.post('/contacts', ContactData);
+    const res: ContactResponse = await api.post('/contact', ContactData);
     return (res.contact || res.data) as Contact;
 }
 
 async function updateContact(id: string, ContactData: Partial<Contact> | FormData): Promise<Contact> {
-    const res: ContactResponse = await api.put(`/contacts/${id}`, ContactData);
+    const res: ContactResponse = await api.put(`/contact/${id}`, ContactData);
     return (res.contact || res.data) as Contact;
 }
 
 async function deleteContact(id: string): Promise<void> {
-    await api.delete(`/contacts/${id}`);
+    await api.delete(`/contact/${id}`);
 }
 
 const ContactAPI = {
