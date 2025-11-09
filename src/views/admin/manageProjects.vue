@@ -20,6 +20,7 @@
       <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
       <p>Loading projects...</p>
     </div>
+    
 
     <!-- Projects Grid -->
     <div v-else-if="projects.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

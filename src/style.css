@@ -128,7 +128,7 @@ html {
 }
 
 .form-group{
-    @apply mb-6
+    @apply mb-6 font-bold text-lg 
 }
 
 

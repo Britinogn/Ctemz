@@ -13,21 +13,23 @@ export interface AuthResponse  {
     user: User;
 }
 
+export interface ImageData {
+  url: string | null;
+  public_id: string | null;
+}
+
 export interface Project {
-    _id: string;
-    title: string;
-    description: string;
-    techStack: string[];
-    githubUrl: string;
-    liveURL: string;
-    imageURL: {
-        url: string | null ;
-        public_id: string | null;
-    }[];
-    category?:string
-    yearBuilt?: number;
-    createdAt: string;
-    updatedAt: string;
+  _id: string;
+  title: string;
+  description: string;
+  techStack: string[];
+  githubUrl: string;
+  liveURL: string;
+  imageURL: ImageData[]; // Use the specific type
+  category?: string;
+  yearBuilt?: number;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface Blog {

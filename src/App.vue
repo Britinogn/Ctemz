@@ -12,19 +12,19 @@
   import Navbar from "./components/layout/Navbar.vue";
   import Footer from "./components/layout/Footer.vue";
 
-import { onMounted } from 'vue'
-import { useLenis } from './plugins/lenis'
+// import { onMounted } from 'vue'
+// import { useLenis } from './plugins/lenis'
 
-onMounted(() => {
-  useLenis() // Only one instance
-})
+// onMounted(() => {
+//   useLenis() // Only one instance
+// })
 
 </script>
 
 <style>
-html {
+/* html {
   scroll-behavior: smooth;
   scrollbar-color: orange;
   scroll-padding-top: 80px;
-}
+} */
 </style>
