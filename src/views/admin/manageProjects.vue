@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-7xl mx-auto">
+  <div class="max-w-7xl  mx-auto">
     <!-- Header -->
     <div class="flex justify-between items-start mb-8">
       <div>
@@ -8,7 +8,7 @@
       </div>
       <button 
         @click="openCreateModal" 
-        class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-all transform hover:-translate-y-0.5"
+        class="flex cursor-pointer items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-all transform hover:-translate-y-0.5"
       >
         <PlusIcon />
         <span>Add Project</span>
@@ -16,11 +16,19 @@
     </div>
 
     <!-- Loading State -->
-    <div v-if="isLoading" class="flex flex-col items-center justify-center gap-4 p-16 text-gray-500">
+    <!-- <div v-if="isLoading" class="flex flex-col items-center justify-center gap-4 p-16 text-gray-500">
       <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
       <p>Loading projects...</p>
-    </div>
+    </div> -->
     
+    <div v-if="isLoading" class="flex justify-center items-center min-h-screen bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50">
+      <div class="relative">
+        <div class="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-8 h-8 bg-blue-600 rounded-full animate-pulse"></div>
+        </div>
+      </div>
+    </div>
 
     <!-- Projects Grid -->
     <div v-else-if="projects.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -69,14 +77,14 @@
           <div class="flex gap-3">
             <button 
               @click="openUpdateModal(project)" 
-              class="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gray-200 text-gray-900 rounded-lg hover:bg-gray-300 transition-colors text-sm font-medium"
+              class="flex-1 flex cursor-pointer items-center justify-center gap-2 px-3 py-2 bg-gray-200 text-gray-900 rounded-lg hover:bg-gray-300 transition-colors text-sm font-medium"
             >
               <EditIcon />
               Edit
             </button>
             <button 
               @click="confirmDelete(project)" 
-              class="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-transparent text-red-600 border border-red-600 rounded-lg hover:bg-red-50 transition-colors text-sm font-medium"
+              class="flex-1 flex cursor-pointer items-center justify-center gap-2 px-3 py-2 bg-transparent text-red-600 border border-red-600 rounded-lg hover:bg-red-50 transition-colors text-sm font-medium"
             >
               <TrashIcon />
               Delete
