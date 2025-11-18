@@ -156,15 +156,15 @@ const goForward = () => {
                         <div class="flex flex-col md:flex-row gap-4" >
 
                             <!-- Date -->
-                            <div v-if="project.yearBuilt" class="text-center">
+                            <div v-if="project.yearBuilt">
                                 <h3 class="text-lg font-semibold text-white mb-2">Date</h3>
                                 <p class="text-gray-400 text-sm">{{ project.yearBuilt }}</p>
                             </div>
 
                             <!-- Type -->
                             <div v-if="project.category">
-                                <h3 class="text-lg font-semibold text-white mb-2">Type</h3>
-                                <span class="inline-block px-4 py-2 bg-orange-500/20 text-orange-400 rounded-full text-sm font-semibold border border-orange-500/30">
+                                <h3 class="text-lg font-semibold text-white mb-2">Category</h3>
+                                <span class="inline-block px-2 py-2 bg-orange-500/20 text-orange-400 rounded-xl text-sm font-semibold border border-orange-500/30">
                                     {{ project.category }}
                                 </span>
                             </div>

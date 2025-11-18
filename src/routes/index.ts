@@ -38,7 +38,7 @@ const routes: RouteRecordRaw[] = [
     meta: { hideFooter: true, hideNavbar: true } 
   },
   {
-    path: "/dashboard",
+    path: "/dashboard", 
     component: AdminLayout,
     meta: { requiresAuth: true },
     children: [
