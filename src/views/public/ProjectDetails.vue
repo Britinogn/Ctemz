@@ -10,7 +10,7 @@ const route = useRoute();
 const projectId = route.params.id as string;
 
 // Destructure INCLUDING 'project' – this exposes it to the template
-const { project, projects, loading, error, refetch } = useProjects(projectId);
+const { project, projects, loading, error } = useProjects(projectId);
 
 // List of all projects (fallback empty array to avoid "Cannot find name 'allProjects'" errors)
 //const allProjects = ref<Project[]>([]);
