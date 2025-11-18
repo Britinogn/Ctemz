@@ -153,7 +153,7 @@ const goForward = () => {
                             </div>
                         </div>
 
-                        <div class="md:flex " >
+                        <div class="flex flex-col md:flex-row gap-4" >
 
                             <!-- Date -->
                             <div v-if="project.yearBuilt" class="text-center">
