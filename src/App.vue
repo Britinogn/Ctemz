@@ -5,6 +5,7 @@
     <RouterView  />
     <Footer v-if="!$route.meta.hideFooter" />
   </AuthProvider>
+  
 </template>
 
 <script setup lang="ts">

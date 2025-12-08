@@ -6,10 +6,10 @@
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4">
           Contact
         </h1>
-        <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-white/70 mx-auto rounded-full"></div>
         <p class="text-gray-400 mt-4">
           Have a question or want to work together?<br />
-          <span class="text-orange-400 font-semibold">Let's Make It Happen!</span>
+          <span class="text-white/80  font-semibold">Let's Make It Happen!</span>
         </p>
       </div>
 
@@ -22,7 +22,7 @@
             type="text"
             placeholder="Full Name"
             
-            class="w-full md:w-1/2 bg-gray-900 border border-gray-700 px-4 py-3 text-white rounded-lg focus:outline-none focus:border-orange-500"
+            class="w-full md:w-1/2 bg-gray-900 border border-gray-700 px-4 py-3 text-white rounded-lg focus:outline-none focus:border-gray-500"
           />
 
           <input
@@ -30,7 +30,7 @@
             type="email"
             placeholder="Email Address"
             
-            class="w-full md:w-1/2 bg-gray-900 border border-gray-700 px-4 py-3 text-white rounded-lg focus:outline-none focus:border-orange-500"
+            class="w-full md:w-1/2 bg-gray-900 border border-gray-700 px-4 py-3 text-white rounded-lg focus:outline-none focus:border-gray-500"
           />
         </div>
 
@@ -40,7 +40,7 @@
           type="text"
           placeholder="Subject"
           
-          class="w-full bg-gray-900 border border-gray-700 px-4 py-3 text-white rounded-lg focus:outline-none focus:border-orange-500"
+          class="w-full bg-gray-900 border border-gray-700 px-4 py-3 text-white rounded-lg focus:outline-none focus:border-gray-500"
         />
 
         <!-- Message -->
@@ -49,14 +49,14 @@
           placeholder="Your Message"
           
           rows="5"
-          class="w-full bg-gray-900 border border-gray-700 px-4 py-3 text-white rounded-lg focus:outline-none focus:border-orange-500 resize-y min-h-[100px] max-h-[180px]"
+          class="w-full bg-gray-900 border border-gray-700 px-4 py-3 text-white rounded-lg focus:outline-none focus:border-gray-500 resize-y min-h-[100px] max-h-[180px]"
         ></textarea>
 
         <!-- Submit Button -->
         <button
           type="submit"
           :disabled="loading"
-          class="w-50 md:w-1/2 mx-auto cursor-pointer block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          class="w-50 md:w-1/2 mx-auto cursor-pointer block btn btn-primary text-white font-bold py-3 rounded-lg transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {{ loading ? 'Sending...' : 'Send Message' }}
         </button>

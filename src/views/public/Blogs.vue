@@ -1,32 +1,31 @@
 <template>
   <section class="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white py-20 px-6 md:px-12 overflow-hidden">
     <!-- Animated Background -->
-    <div class="absolute inset-0 opacity-20">
+    <!-- <div class="absolute inset-0 opacity-20">
       <div class="absolute top-20 left-10 w-72 h-72 bg-orange-500 rounded-full blur-3xl animate-pulse"></div>
       <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
       <div class="absolute top-1/2 left-1/3 w-64 h-64 bg-blue-500 rounded-full blur-3xl animate-pulse" style="animation-delay: 0.5s;"></div>
-    </div>
+    </div> -->
 
     <div class="relative z-10 max-w-7xl mx-auto">
       <!-- Header -->
       <header class="text-center mb-16 animate-fade-in">
-        <h1 class="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent mb-4">
+        <h1 class="text-5xl md:text-6xl font-extrabold bg-white bg-clip-text text-transparent mb-4">
           My Blog
         </h1>
+        <div class="w-24 h-1 mb-2 bg-white/70 mx-auto mt-6 rounded-full"></div>
+
         <p class="text-gray-300 text-lg max-w-2xl mx-auto">
           Insights, tutorials, and thoughts on web development, design, and technology.
           Updated regularly with practical tips and deep dives.
         </p>
-        <div class="w-24 h-1 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mt-6 rounded-full"></div>
       </header>
 
       <!-- Loading State -->
       <div v-if="loading" class="flex justify-center items-center py-24">
         <div class="relative">
-          <div class="w-16 h-16 border-4 border-orange-300/40 border-t-orange-500 rounded-full animate-spin"></div>
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-8 h-8 bg-orange-500/30 rounded-full animate-pulse"></div>
-          </div>
+          <div class="w-16 h-16 border-4 border-orange-300/40 border-t-orange-500 rounded-xl animate-spin"></div>
+          
         </div>
       </div>
 
@@ -37,7 +36,7 @@
           <p class="text-gray-300 mb-6">{{ error }}</p>
           <button
             @click="refetch"
-            class="px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-semibold rounded-full hover:from-orange-600 hover:to-yellow-600 transition-all duration-300"
+            class="px-6 py-3 bg-white text-black font-semibold rounded-full hover:from-orange-600 hover:to-yellow-600 transition-all duration-300"
           >
             Retry
           </button>
@@ -76,7 +75,7 @@
               </span>
             </div>
 
-            <h2 class="text-xl font-bold mb-3 line-clamp-2 bg-gradient-to-r from-orange-400 to-yellow-500 bg-clip-text text-transparent group-hover:from-orange-500 group-hover:to-yellow-600 transition-all duration-300">
+            <h2 class="text-xl font-bold mb-3 line-clamp-2 bg-white bg-clip-text text-transparent group-hover:from-orange-500 group-hover:to-yellow-600 transition-all duration-300">
               {{ blog.title }}
             </h2>
 
@@ -89,7 +88,7 @@
               :href="blog.url"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center text-orange-400 hover:text-yellow-400 font-semibold transition-all"
+              class="inline-flex items-center text-blue-300 font-semibold transition-all"
             >
               Read More
               <svg
@@ -117,7 +116,7 @@
           >
             ← Previous
           </button>
-          <span class="px-5 py-2 rounded-lg bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-bold shadow">
+          <span class="px-5 py-2 rounded-lg bg-white text-black font-bold shadow">
             Page {{ currentPage }}
           </span>
           <button

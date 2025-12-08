@@ -59,12 +59,7 @@ const goForward = () => {
 <template>
     <section class="relative min-h-screen bg-linear-to-br from-gray-900 via-black to-gray-900 text-white py-20 px-6 md:px-12 overflow-hidden">
     
-        <!-- Animated Background -->
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-20 left-10 w-72 h-72 bg-orange-500 rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
-            <div class="absolute top-1/2 left-1/3 w-64 h-64 bg-blue-500 rounded-full blur-3xl animate-pulse" style="animation-delay: 0.5s;"></div>
-        </div>
+    
 
         <div class="relative z-10 max-w-7xl mx-auto">
     
@@ -73,16 +68,16 @@ const goForward = () => {
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold bg-white bg-clip-text text-transparent mb-4">
                 {{ project?.title || 'Project Details' }}
             </h1>
-            <div class="w-24 h-1 bg-linear-to-r from-orange-500 to-yellow-500 mx-auto rounded-full"></div>
+            <div class="w-24 h-1 bg-linear-to-r from-white/50 to-white/70 mx-auto rounded-full"></div>
             </div>
 
             <!-- Loading State -->
             <div v-if="loading" class="flex justify-center items-center min-h-screen bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50">
                 <div class="relative">
                 <div class="w-16 h-16 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></div>
-                <div class="absolute inset-0 flex items-center justify-center">
+                <!-- <div class="absolute inset-0 flex items-center justify-center">
                     <div class="w-8 h-8 bg-blue-600 rounded-full animate-pulse"></div>
-                </div>
+                </div> -->
                 </div>
             </div>
 
@@ -146,7 +141,7 @@ const goForward = () => {
                                 <span
                                 v-for="(tech, index) in project.techStack"
                                 :key="index"
-                                class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium border border-blue-500/30"
+                                class="px-3  py-2 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium border border-blue-500/30"
                                 >
                                 {{ tech }}
                                 </span>
@@ -164,7 +159,7 @@ const goForward = () => {
                             <!-- Type -->
                             <div v-if="project.category">
                                 <h3 class="text-lg font-semibold text-white mb-2">Category</h3>
-                                <span class="inline-block px-2 py-2 bg-orange-500/20 text-orange-400 rounded-xl text-sm font-semibold border border-orange-500/30">
+                                <span class="inline-block px-2 py-2 bg-(--color-primary) text-white rounded-xl text-sm font-semibold border border-gray-500/30">
                                     {{ project.category }}
                                 </span>
                             </div>

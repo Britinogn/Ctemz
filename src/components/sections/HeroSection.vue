@@ -6,11 +6,11 @@
     class="relative min-h-screen flex flex-col-reverse md:flex-row items-center justify-center bg-black text-white overflow-hidden px-8 md:px-16"
   >
     <!-- Animated Background Blobs -->
-    <div class="absolute inset-0 overflow-hidden opacity-20">
-      <div class="absolute top-20 left-20 w-96 h-96 bg-orange-500 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-20 right-20 w-[500px] h-[500px] bg-yellow-500 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-purple-500 rounded-full blur-3xl animate-pulse-slower"></div>
-    </div>
+    <!-- <div class="absolute inset-0 overflow-hidden opacity-20">
+      <div class="absolute top-20 left-20 w-96 h-96 bg-white/20 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-20 right-20 w-[500px] h-[500px] bg-white/20  rounded-full blur-3xl animate-pulse-slow"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-white/20  rounded-full blur-3xl animate-pulse-slower"></div>
+    </div> -->
 
     <!-- Gradient Overlay Removed -->
     <div class="absolute inset-0 bg-black/20 pointer-events-none"></div>
@@ -22,7 +22,7 @@
       <!-- Small Badge -->
       <div class="flex justify-center md:justify-start">
         <span
-          class="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 border border-orange-500/30 text-orange-400 rounded-full text-sm font-semibold backdrop-blur-sm"
+          class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 border border-white/30 text-white rounded-full text-sm font-semibold backdrop-blur-sm"
         >
           <span class="relative flex h-2 w-2">
             <span
@@ -37,22 +37,22 @@
       <!-- Main Heading -->
       <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight">
         Hi, I'm 
-        <span class="text-orange-400">
+        <span class="text-white">
           Tino Ctemz
         </span>
-        <span class="inline-block animate-wave">👋</span>
+        <span class="inline-block animate-wave"></span>
       </h1>
 
       <!-- Subheading -->
       <h2 class="text-xl md:text-2xl lg:text-4xl text-gray-300 font-bold animate-slide-in">
-        <span class="text-orange-400">Frontend Developer</span> & 
-        <span class="text-yellow-400">Creative Technologist</span>
+        <span class="text-white">Frontend Developer</span> & 
+        <span class="text-white/85">Creative Technologist</span>
       </h2>
 
       <!-- Description -->
       <p class="max-w-xl text-lg text-gray-400 leading-relaxed">
-        I build <span class="text-orange-400 font-semibold">interactive</span>, 
-        <span class="text-orange-400 font-semibold">modern</span> web experiences that connect design and performance — clean code, smooth animations, and thoughtful UI.
+        I build <span class="text-white font-semibold">interactive</span>, 
+        <span class="text-white font-semibold">modern</span> web experiences that connect design and performance — clean code, smooth animations, and thoughtful UI.
       </p>
 
       <!-- CTA Buttons -->
@@ -75,7 +75,6 @@
     >
       <div class="relative group ">
         <!-- Rotating Border Effect -->
-        <div class="absolute -inset-4 bg-linear-to-r from-orange-500 via-yellow-500 to-orange-500 rounded-full blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-500 animate-spin-slow"></div>
         
         <!-- Image Container -->
         <div class="relative w-72  h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-orange-500/30 shadow-2xl">
@@ -89,8 +88,7 @@
         </div>
 
         <!-- Floating Elements -->
-        <div class="absolute -top-4 -right-4 w-20 h-20 bg-orange-500 rounded-full opacity-60 blur-xl animate-float"></div>
-        <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-yellow-500 rounded-full opacity-60 blur-xl animate-float-delay"></div>
+        
       </div>
     </div>
   </section>

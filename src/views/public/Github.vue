@@ -7,7 +7,7 @@
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4">
           GitHub Stats
         </h1>
-        <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-white/70 mx-auto rounded-full"></div>
       </div>
 
       <!-- Loading State -->
@@ -22,7 +22,7 @@
           <p class="text-gray-400 mb-4">{{ error }}</p>
           <button
             @click="refetch"
-            class="px-4 py-2 bg-orange-500 text-black font-semibold rounded-lg hover:bg-yellow-500 transition-all duration-300"
+            class="px-4 py-2 bg-white text-black font-semibold rounded-lg hover:bg-yellow-500 transition-all duration-300"
           >
             Refresh Stats
           </button>
@@ -39,10 +39,10 @@
               <img
                 :src="stats.avatarUrl"
                 :alt="`${stats.username} avatar`"
-                class="w-32 h-32 rounded-full border-4 border-orange-500/40 shadow-lg object-cover"
+                class="w-32 h-32 rounded-full border-4 border-gray-500/40 shadow-lg object-cover"
               />
               <div class="text-center md:text-left">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-2">
                   {{ stats.username }}
                 </h2>
                 <p v-if="stats.bio" class="text-gray-300 text-lg italic">{{ stats.bio }}</p>
@@ -58,7 +58,7 @@
                     :href="stats.blog"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="px-3 py-1 bg-gray-800 text-orange-400 rounded-full text-sm hover:bg-gray-700 transition"
+                    class="px-3 py-1 bg-gray-800 text-white rounded-full text-sm hover:bg-gray-700 transition"
                   >
                     🌐 Blog
                   </a>
@@ -69,11 +69,11 @@
             <!-- Followers/Following -->
             <div class="grid grid-cols-2 gap-4 p-6 bg-gray-900 rounded-2xl border border-white/10">
               <div class="text-center">
-                <p class="text-3xl font-bold text-orange-400">{{ stats.followers }}</p>
+                <p class="text-3xl font-bold text-white ">{{ stats.followers }}</p>
                 <p class="text-gray-400 text-sm uppercase tracking-wide">Followers</p>
               </div>
               <div class="text-center">
-                <p class="text-3xl font-bold text-yellow-400">{{ stats.following }}</p>
+                <p class="text-3xl font-bold text-white ">{{ stats.following }}</p>
                 <p class="text-gray-400 text-sm uppercase tracking-wide">Following</p>
               </div>
             </div>
@@ -83,7 +83,7 @@
               Last updated: {{ formatDate(stats.lastUpdated) }}
               <button
                 @click="refetch"
-                class="ml-4 px-3 py-2 bg-orange-500 text-black font-semibold rounded-full text-xs hover:bg-yellow-500 transition-all duration-300"
+                class="ml-4 px-3 py-2 bg-white  text-black font-semibold rounded-full text-xs hover:bg-yellow-500 transition-all duration-300"
               >
                 Refresh
               </button>
@@ -95,22 +95,22 @@
             <!-- Repo Stats -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-6 bg-gray-900 rounded-2xl border border-white/10">
               <div class="text-center">
-                <p class="text-3xl font-bold text-orange-400">{{ stats.totalRepos }}</p>
+                <p class="text-3xl font-bold text-white">{{ stats.totalRepos }}</p>
                 <p class="text-gray-400 text-sm uppercase tracking-wide">Repos</p>
               </div>
               <div class="text-center">
-                <p class="text-3xl font-bold text-yellow-400">{{ stats.totalStars }}</p>
+                <p class="text-3xl font-bold text-white">{{ stats.totalStars }}</p>
                 <p class="text-gray-400 text-sm uppercase tracking-wide">Stars</p>
               </div>
               <div class="text-center">
-                <p class="text-3xl font-bold text-orange-300">{{ stats.totalForks }}</p>
+                <p class="text-3xl font-bold text-white">{{ stats.totalForks }}</p>
                 <p class="text-gray-400 text-sm uppercase tracking-wide">Forks</p>
               </div>
             </div>
 
             <!-- Languages -->
             <div v-if="stats.languages.length" class="p-4 bg-gray-900 rounded-xl border border-orange-500/20">
-              <p class="text-sm font-semibold text-orange-400 mb-3 uppercase tracking-wide">Languages Used</p>
+              <p class="text-sm font-semibold text-white mb-3 uppercase tracking-wide">Languages Used</p>
               <marquee behavior="scroll" direction="left" scrollamount="4" class="flex gap-4">
                 <span
                   v-for="lang in stats.languages"
@@ -128,7 +128,7 @@
                 :href="`https://github.com/${stats.username}`"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-block px-6 py-3 bg-orange-500 hover:bg-yellow-500 text-black font-semibold rounded-lg transition duration-300"
+                class="inline-block px-6 py-3 bg-white  text-black font-semibold rounded-lg transition duration-300"
               >
                 View on GitHub
               </a>
@@ -145,7 +145,7 @@
           <p class="text-lg">Fetch some GitHub data to get started!</p>
           <button
             @click="refetch"
-            class="mt-4 px-6 py-2 bg-orange-500 text-black font-bold rounded-full hover:bg-yellow-500 transition-all duration-300"
+            class="mt-4 px-6 py-2 bg-white text-black font-bold rounded-full hover:bg-yellow-500 transition-all duration-300"
           >
             Load Stats
           </button>

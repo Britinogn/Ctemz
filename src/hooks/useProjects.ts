@@ -50,7 +50,7 @@ function useProjects(id?: string) {
         } else {
             fetchProjects();
         }
-    });
+    }); 
 
     return { projects,  project,  loading, error, refetch };
 }

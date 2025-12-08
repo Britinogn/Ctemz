@@ -24,12 +24,20 @@ async function getProjectById(id: string): Promise<Project> {
 }
 
 async function createProject(projectData: Partial<Project> | FormData): Promise<Project> {
-  const response: ProjectResponse = await api.post('/projects', projectData);
+  const response: ProjectResponse = await api.post('/projects', projectData , {
+    headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+  });
   return (response.project || response.data) as Project;
 }
 
 async function updateProject(id: string, projectData: Partial<Project> | FormData): Promise<Project> {
-  const response: ProjectResponse = await api.put(`/projects/${id}`, projectData);
+  const response: ProjectResponse = await api.put(`/projects/${id}`, projectData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+  });
   return (response.project || response.data) as Project;
 }
 

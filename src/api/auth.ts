@@ -44,7 +44,7 @@ export function logout(): void {
     setToken(null);
     setUser(null);
     window.location.href = '/login';
-}
+}   
 
 const auth = {
     getToken,

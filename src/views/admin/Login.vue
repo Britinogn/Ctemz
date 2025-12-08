@@ -2,7 +2,7 @@
   <div class="min-h-screen flex items-center justify-center p-4 bg-gray-50">
     <div class="w-full max-w-md mx-4 sm:mx-0 bg-white p-6 sm:p-8 rounded-xl shadow-lg border border-gray-200">
       <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold text-amber-500 mb-1">House of Peishy</h2>
+        <h2 class="text-2xl font-bold text-amber-500 mb-1">Ctemz Portfolio</h2>
         <p class="text-gray-500 text-sm mt-1">Admin Panel</p>
         <p class="text-gray-600 text-base">Sign in to your account</p>
       </div>
@@ -64,7 +64,7 @@ import { useRouter } from 'vue-router'
 //import type { AxiosResponse } from 'axios'
 import api from '../../api/api'
 import { setToken, setUser } from '../../api/auth'
-import type { User } from '../../types/script' // Assuming User type is exported from auth/types
+import type { User } from '../../types/script' 
 
 interface FormData {
   email: string

@@ -39,12 +39,11 @@ function navigateToBlog() {
         
         <!-- Logo/Brand -->
         <router-link to="/" class="flex items-center space-x-3 group">
-          <div class="relative w-10 h-10 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
+          <div class="relative w-10 h-10 bg-white rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300">
             <span class="text-black font-bold text-lg">T</span>
             <!-- Glow Effect -->
-            <div class="absolute inset-0 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity"></div>
           </div>
-          <span class="text-white font-bold text-xl hidden sm:inline group-hover:text-orange-400 transition-colors">
+          <span class="text-white font-bold text-xl hidden sm:inline  transition-colors">
             Tino Ctemz
           </span>
         </router-link>
@@ -56,7 +55,7 @@ function navigateToBlog() {
             :key="link.path"
             :to="link.path"
             class="relative text-gray-400 hover:text-white transition-colors duration-300 font-medium text-sm group"
-            :class="{ '!text-orange-400': isActive(link.path) }"
+            :class="{ '!text-blue-300': isActive(link.path) }"
           >
             {{ link.name }}
             <!-- Underline Effect -->
@@ -69,7 +68,7 @@ function navigateToBlog() {
           <!-- Contact Button -->
           <button
             @click="navigateToBlog"
-            class="px-6 py-2.5 cursor-pointer bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-bold rounded-full hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300"
+            class="px-6 py-2.5 cursor-pointer bg-white text-black font-bold rounded-full hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50 transition-all duration-300"
           >
             Blog
           </button>
@@ -78,7 +77,7 @@ function navigateToBlog() {
         <!-- Mobile Menu Button -->
         <button
           @click="toggleMobileMenu"
-          class="md:hidden p-2 cursor-pointer text-gray-400 hover:text-orange-400 transition-colors relative"
+          class="md:hidden p-2 cursor-pointer text-gray-400 transition-colors relative"
           aria-label="Toggle menu"
         >
           <!-- Hamburger Icon -->
@@ -121,14 +120,14 @@ function navigateToBlog() {
             :to="link.path"
             @click="closeMobileMenu"
             class="block text-gray-400 hover:text-orange-400 transition-colors duration-300 font-medium text-lg py-2 px-4 rounded-lg hover:bg-gray-900"
-            :class="{ '!text-orange-400 bg-gray-900': isActive(link.path) }"
+            :class="{ 'text-white!important bg-gray-900': isActive(link.path) }"
           >
             {{ link.name }}
           </router-link>
 
           <button
             @click="navigateToBlog"
-            class="w-full px-6 cursor-pointer py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-black font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
+            class="w-full px-6 cursor-pointer py-3 bg-white text-black font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
           >
             Blog
           </button>

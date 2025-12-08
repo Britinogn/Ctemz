@@ -39,7 +39,7 @@
         </div>
 
         <!-- Social Links -->
-        <div class="flex items-center space-x-5">
+        <div class="flex items-center space-x-5 w-full md:w-auto flex-wrap justify-center">
           <a
             href="https://github.com/britinogn"
             target="_blank"

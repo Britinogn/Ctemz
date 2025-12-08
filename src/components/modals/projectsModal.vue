@@ -407,7 +407,7 @@ const handleSubmit = async (): Promise<void> => {
     console.log('FormData contents:')
     for (let pair of fd.entries()) {
       console.log(pair[0], pair[1])
-    }
+    } 
 
     let response
     if (isEdit.value && formData.value._id) {

@@ -29,7 +29,7 @@ onMounted(() => {
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4">
           My Projects
         </h1>
-        <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-white/70 mb-2 mx-auto rounded-full"></div>
         <p class="text-gray-400 text-lg">A selection of my recent work</p>
       </div>
 
@@ -43,7 +43,7 @@ onMounted(() => {
         </div>
       </div>
 
-      <!-- Error State -->
+      <!-- Er ror State -->
       <div v-else-if="error" class="min-h-[60vh] flex items-center justify-center p-4">
         <div class="bg-gray-800/50 backdrop-blur-sm border border-red-500/30 p-6 rounded-xl shadow-2xl max-w-md w-full text-center">
           <ExclamationCircleIcon class="h-6 w-6 text-red-400 mx-auto mb-4" />
@@ -51,7 +51,7 @@ onMounted(() => {
           <p class="text-gray-300 mb-4">{{ error }}</p>
           <button
             @click="refetch"
-            class="px-4 py-2 bg-linear-to-r from-red-500 to-orange-500 text-white font-semibold rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300"
+            class="px-4 py-2 bg-linear-to-r from-black/20 to-lack/50 text-white font-semibold rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300"
           >
             Retry
           </button>
@@ -87,10 +87,10 @@ onMounted(() => {
               @click="router.push({ name: 'ProjectDetails', params: { id: project._id } })"
             >
               <!-- Decorative Frame/Backdrop -->
-              <div class="absolute inset-0 bg-linear-to-br from-transparent to-white/20 backdrop-blur-md rounded-xl -z-10 transform -rotate-2 scale-105"></div>
+              <!-- <div class="absolute inset-0 bg-linear-to-br from-transparent to-white/20 backdrop-blur-md rounded-xl -z-10 transform -rotate-2 scale-105"></div>
               <div class="absolute -top-6 -left-6 w-10 h-10 bg-[var(--color-primary)] rounded-full opacity-50 blur-sm"></div>
               <div class="absolute -bottom-6 -right-6 w-10 h-10 bg-purple-300 rounded-full opacity-50 blur-sm"></div>
-              <div class="absolute top-4 right-4 w-6 h-6 bg-green-300 rounded-full opacity-40"></div>
+              <div class="absolute top-4 right-4 w-6 h-6 bg-green-300 rounded-full opacity-40"></div> -->
 
               <!-- Project Image -->
               <div class="relative overflow-hidden bg-black/20">

@@ -37,6 +37,7 @@ const routes: RouteRecordRaw[] = [
   { path: "/login", name: "Login", component: Login ,
     meta: { hideFooter: true, hideNavbar: true } 
   },
+  
   {
     path: "/dashboard", 
     component: AdminLayout,

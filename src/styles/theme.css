@@ -10,8 +10,8 @@
     --text-secondary: #a3a3a3;
 
     /* ===== Brand Colors ===== */
-    --color-primary: #ff6b00; /* Orange accent */
-    --color-primary-hover: #e65c00;
+    --color-primary: #928b86; /* Orange accent */
+    --color-primary-hover: #484746;
     --color-secondary: #fbbf24; /* Honey amber */
     --color-secondary-hover: #f59e0b;
     --color-accent: #f472b6; /* Rosy pop */
@@ -38,7 +38,7 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
-font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.5;
 }

@@ -2,11 +2,6 @@
   <section class="relative min-h-screen bg-black text-white py-20 px-6 md:px-12 overflow-hidden">
     
     <!-- Animated Background Elements -->
-    <div class="absolute inset-0 overflow-hidden opacity-20">
-      <div class="absolute top-20 left-10 w-72 h-72 bg-orange-500 rounded-full blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div class="absolute top-1/2 left-1/3 w-64 h-64 bg-blue-500 rounded-full blur-3xl animate-pulse delay-500"></div>
-    </div>
 
     <div class="relative z-10 max-w-7xl mx-auto">
       
@@ -15,7 +10,7 @@
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4">
           About Me
         </h1>
-        <div class="w-24 h-1 bg-orange-500 mx-auto rounded-full"></div>
+        <div class="w-24 h-1 bg-white/70  mx-auto rounded-full"></div>
       </div>
 
       <!-- Main Content -->
@@ -27,24 +22,24 @@
           <div class="space-y-4">
             <h2 class="text-3xl md:text-4xl lg:text-6xl font-extrabold leading-tight">
               Hey, I'm 
-              <span class="text-orange-400">Tino Ctemz</span> 
-              <span class="inline-block animate-wae animate-pulse"> 🪖⚙️</span>
+              <span class="text-white ">Tino Ctemz</span> 
+              <span class="inline-block animate-wae animate-pulse"></span>
 
             </h2>
 
             
             <p class="text-xl md:text-2xl text-gray-300 font-semibold leading-relaxed">
               A Freelance 
-              <span class="text-orange-400">Web Designer</span> & 
-              <span class="text-orange-400">Developer</span> based in 
-              <span class="text-yellow-400">Agbor, Nigeria</span>.
+              <span class="">Web Designer</span> & 
+              <span class="">Developer</span> based in 
+              <span class="">Agbor, Nigeria</span>.
             </p>
           </div>
 
           <p class="text-lg text-gray-400 leading-relaxed">
             I specialize in crafting 
-            <span class="text-orange-400 font-semibold">intuitive</span>, 
-            <span class="text-orange-400 font-semibold">high-performance</span> web and mobile applications, 
+            <span class=" font-semibold">intuitive</span>, 
+            <span class=" font-semibold">high-performance</span> web and mobile applications, 
             from sleek portfolios to robust e-commerce platforms.
           </p>
 
@@ -73,12 +68,7 @@
         <div class="w-90 lg:w-90 md:w-1/2 flex justify-center items-center animate-slide-in-right">
           <div class="relative group">
             
-            <!-- Decorative Elements -->
-            <div class="absolute -inset-4 bg-orange-500 rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500 animate-pulse"></div>
-            <div class="absolute -top-8 -left-8 w-20 h-20 bg-orange-500 rounded-full opacity-40 blur-2xl animate-bounce-slow"></div>
-            <div class="absolute -bottom-8 -right-8 w-24 h-24 bg-yellow-500 rounded-full opacity-40 blur-2xl animate-bounce-slow delay-1000"></div>
-            <div class="absolute top-1/4 -right-6 w-16 h-16 bg-purple-500 rounded-full opacity-30 blur-xl animate-float"></div>
-            
+          
             <!-- Main Image Container -->
             <div class="relative bg-black p-1 rounded-3xl backdrop-blur-sm border border-white/20 shadow-2xl overflow-hidden">
               <div class="bg-gray-900 rounded-3xl p-2">
@@ -91,7 +81,7 @@
             </div>
 
             <!-- Floating Badge -->
-            <div class="absolute -bottom-4 -left-4 bg-orange-500 text-black px-6 py-3 rounded-2xl font-bold shadow-xl animate-float">
+            <div class="absolute -bottom-4 -left-4 bg-(--color-primary) text-black px-6 py-3 rounded-2xl font-bold shadow-xl animate-float">
               <span class="text-sm">Available for Freelance</span>
               <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
               <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"></div>
