@@ -29,8 +29,8 @@
           <p class="text-md text-blue-100">Here's what's happening with your portfolio today</p>
         </div>
         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 text-center">
-          <p class="text-2xl font-bold mb-1">{{ date.day }}</p>
-          <p class="text-sm text-blue-100">{{ date.weekday }}</p>
+          <p class="text-2xl font-bold mb-1">{{ currentWeekday }}</p>
+          <p class="text-sm text-blue-100">{{ currentDay }}</p>
         </div>
       </div>
     </div>
@@ -150,7 +150,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, reactive, computed } from 'vue'
+import { ref, onMounted , computed } from 'vue'
 import { EnvelopeIcon, CodeBracketIcon, RocketLaunchIcon, DocumentTextIcon, BoltIcon } from '@heroicons/vue/24/outline'
 import DashboardAPI from '../../api/dashboardAPI'
 import type { DashboardData, Contact } from '../../types/script'
@@ -159,11 +159,19 @@ const data = ref<DashboardData | null>(null)
 const loading = ref(true)
 const error = ref<string | null>(null)
 
-// date display - updated to current date
-const date = reactive({
-  day: 'Nov 5',
-  weekday: 'Wednesday'
-})
+const currentDay = computed(() => {
+  return new Date().toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric'
+  });
+});
+
+const currentWeekday = computed(() => {
+  return new Date().toLocaleDateString('en-US', {
+    weekday: 'long'
+  });
+});
+
 
 async function fetchDashboard() {
   try {
