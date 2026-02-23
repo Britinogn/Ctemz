@@ -429,7 +429,7 @@ const handleSubmit = async (): Promise<void> => {
 
   function newFunction(fd: FormData) {
     imageFiles.value.forEach((file) => {
-      fd.append('imageURL', file)
+      fd.append('images', file)
     })
   }
 }

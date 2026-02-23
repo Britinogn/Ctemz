@@ -50,16 +50,29 @@
           </div>
 
           <!-- Skill Badges Marquee -->
-          <marquee class="mb-10" behavior="scroll" direction="left" scrollamount="4" style="width: 100%; overflow: hidden; white-space: nowrap;">
+          <!-- Left to right -->
+          <marquee behavior="scroll" direction="left" scrollamount="4" style="width: 100%; overflow: hidden; white-space: nowrap;" class="mb-3">
             <div style="display: inline-flex; gap: 1rem; align-items: center;">
               <span class="px-4 py-2 bg-orange-500/20 text-orange-400 rounded-full text-sm font-semibold border border-orange-500/30">React</span>
               <span class="px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold border border-green-500/30">Vue</span>
               <span class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold border border-blue-500/30">TypeScript</span>
-              <span class="px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold border border-purple-500/30">Github</span>
-              <span class="px-4 py-2 bg-orange-500/20 text-orange-400 rounded-full text-sm font-semibold border border-orange-500/30">Php</span>
               <span class="px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold border border-green-500/30">Python</span>
               <span class="px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold border border-blue-500/30">MongoDB</span>
-              <span class="px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold border border-purple-500/30">Node.js</span>
+              <span class="px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold border border-purple-500/30">Node Js</span>
+              <span class="px-4 py-2 bg-orange-500/20 text-orange-400 rounded-full text-sm font-semibold border border-orange-500/30">Express Js</span>
+            </div>
+          </marquee>
+
+          <!-- Right to left -->
+          <marquee behavior="scroll" direction="right" scrollamount="4" style="width: 100%; overflow: hidden; white-space: nowrap;" class="mb-10">
+            <div style="display: inline-flex; gap: 1rem; align-items: center;">
+              <span class="px-4 py-2 bg-indigo-500/20 text-indigo-400 rounded-full text-sm font-semibold border border-indigo-500/30">PostgreSQL</span>
+              <span class="px-4 py-2 bg-teal-500/20 text-teal-400 rounded-full text-sm font-semibold border border-teal-500/30">Supabase</span>
+              <span class="px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-full text-sm font-semibold border border-cyan-500/30">Golang</span>
+              <span class="px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold border border-green-500/30">Nuxt</span>
+              <span class="px-4 py-2 bg-sky-500/20 text-sky-400 rounded-full text-sm font-semibold border border-sky-500/30">Tailwind</span>
+              <span class="px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold border border-purple-500/30">Github</span>
+              <span class="px-4 py-2 bg-orange-500/20 text-orange-400 rounded-full text-sm font-semibold border border-orange-500/30">Php</span>
             </div>
           </marquee>
         </div>
