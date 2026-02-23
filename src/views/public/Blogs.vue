@@ -24,7 +24,7 @@
       <!-- Loading State -->
       <div v-if="loading" class="flex justify-center items-center py-24">
         <div class="relative">
-          <div class="w-16 h-16 border-4 border-orange-300/40 border-t-orange-500 rounded-xl animate-spin"></div>
+          <div class="w-16 h-16 border-4 border-orange-300/40 border-t-orange-500 rounded-full  animate-spin"></div>
           
         </div>
       </div>

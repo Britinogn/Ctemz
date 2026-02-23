@@ -162,11 +162,20 @@
             />
             
             <!-- Current Images Preview (for edit mode) -->
-            <div v-if="isEdit && formData.imageURL && formData.imageURL.length > 0" class="mb-4">
+            <div v-if="isEdit && formData.imageURL && formData.imageURL.length  > 0" class="mb-4">
               <p class="text-sm text-gray-500 mb-2">Current Images:</p>
               <div class="grid grid-cols-3 gap-2">
                 <div v-for="(img, index) in formData.imageURL" :key="`current-${index}`" class="relative">
                   <img :src="typeof img === 'string' ? img : img.url || ''" alt="Current Image" class="w-full h-24 object-cover rounded" />
+                
+                <!-- <button 
+                    type="button" 
+                    @click="removeImage(index)" 
+                    class="remove-image-btn absolute top-1 right-1 bg-red-500 text-white p-1 rounded hover:bg-red-600"
+                >
+                  <TrashIcon :size="16" />
+                </button> -->
+                
                 </div>
               </div>
             </div>
