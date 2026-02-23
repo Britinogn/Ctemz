@@ -2,8 +2,8 @@ import axios from 'axios';
 import { getAuthState } from './auth';
 
 // Base API URL
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-//const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://britinogn.onrender.com/api';
+//const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://britinogn.onrender.com/api';
 
 // Create axios instance
 const api = axios.create({
