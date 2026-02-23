@@ -168,14 +168,14 @@
                 <div v-for="(img, index) in formData.imageURL" :key="`current-${index}`" class="relative">
                   <img :src="typeof img === 'string' ? img : img.url || ''" alt="Current Image" class="w-full h-24 object-cover rounded" />
                 
-                <!-- <button 
+                  <!-- Delete button for current image -->
+                  <button 
                     type="button" 
-                    @click="removeImage(index)" 
+                    @click="removeCurrentImage(index)" 
                     class="remove-image-btn absolute top-1 right-1 bg-red-500 text-white p-1 rounded hover:bg-red-600"
-                >
-                  <TrashIcon :size="16" />
-                </button> -->
-                
+                  >
+                    <TrashIcon :size="16" />
+                  </button>
                 </div>
               </div>
             </div>
@@ -318,6 +318,13 @@ const handleImageChange = (e: Event) => {
 const removeImage = (index: number) => {
   imageFiles.value.splice(index, 1)
   imagePreviews.value.splice(index, 1)
+}
+
+// Remove an existing (current) image from formData
+function removeCurrentImage(index: number) {
+  if (confirm('Remove this image?')) {
+    formData.value.imageURL.splice(index, 1);  // remove from array
+  }
 }
 
 // Form validation

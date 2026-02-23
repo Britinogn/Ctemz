@@ -189,6 +189,7 @@ async function handleDelete() {
 
   try {
     await ProjectAPI.deleteProject(id);
+    await fetchProjects();
     projects.value = projects.value.filter((p) => p._id !== id);
     showDeleteModal.value = false;
     projectToDelete.value = null;

@@ -14,7 +14,7 @@ interface ProjectResponse {
 }
 
 async function getAllProjects(): Promise<Project[]> {
-  const response: ProjectsResponse = await api.get('/projects?page=1&limit=5');
+  const response: ProjectsResponse = await api.get('/projects');
   return (response.projects || response.data || []) as Project[];
 }
 
