@@ -18,34 +18,28 @@
         
         <!-- Left Content - Text -->
         <div class="w-full md:w-1/2 space-y-6 animate-slide-in-left">
-        
+  
           <div class="space-y-4">
             <h2 class="text-3xl md:text-4xl lg:text-6xl font-extrabold leading-tight">
-              Hey, I'm 
-              <span class="text-white ">Tino Ctemz</span> 
+              <span class="text-white">Full-stack Developer</span> 
               <span class="inline-block animate-wae animate-pulse"></span>
-
             </h2>
 
-            
-            <p class="text-xl md:text-2xl text-gray-300 font-semibold leading-relaxed">
-              A Freelance 
-              <span class="">Web Designer</span> & 
-              <span class="">Developer</span> based in 
-              <span class="">Agbor, Nigeria</span>.
+            <p class="text-xl md:text-lg text-gray-400 font-semibold leading-relaxed">
+              I am a full stack developer based in Nigeria. 
+              I create dynamic and engaging web experiences, blending backend strength with smooth and intuitive user interfaces. 
+              I focus on building applications that are both functional and visually appealing. Let's create something exceptional together.
             </p>
           </div>
 
-          <p class="text-lg text-gray-400 leading-relaxed">
-            I specialize in crafting 
-            <span class=" font-semibold">intuitive</span>, 
-            <span class=" font-semibold">high-performance</span> web and mobile applications, 
-            from sleek portfolios to robust e-commerce platforms.
-          </p>
+          <!-- <p class="text-lg text-gray-400 leading-relaxed">
+              I build full stack applications that focus on backend and frontend
+              creating projects that solve real problems and deliver results.
+          </p> -->
 
           <div class="p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl">
             <p class="text-gray-300 leading-relaxed">
-              Passionate about turning ideas into digital realities, I blend creativity with technical prowess to solve real-world challenges. Whether it's diving into backend proxies, hyping up DevFest events, or motivating the grind toward that first big freelance win, I'm all in on building what lasts.
+              I turn ideas into real web applications, combining strong backend skills with full stack development. I focus on building projects that are reliable, perform well, and solve real problems for clients and users. I am committed to creating solutions that last and deliver real value.
             </p>
           </div>
 
@@ -80,8 +74,7 @@
         <!-- Right Content - Image -->
         <div class="w-90 lg:w-90 md:w-1/2 flex justify-center items-center animate-slide-in-right">
           <div class="relative group">
-            
-          
+
             <!-- Main Image Container -->
             <div class="relative bg-black p-1 rounded-3xl backdrop-blur-sm border border-white/20 shadow-2xl overflow-hidden">
               <div class="bg-gray-900 rounded-3xl p-2">
@@ -95,7 +88,7 @@
 
             <!-- Floating Badge -->
             <div class="absolute -bottom-4 -left-4 bg-(--color-primary) text-black px-6 py-3 rounded-2xl font-bold shadow-xl animate-float">
-              <span class="text-sm">Available for Freelance</span>
+              <span class="text-sm">Open to New Projects</span>
               <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full animate-ping"></div>
               <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-400 rounded-full"></div>
             </div>

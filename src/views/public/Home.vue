@@ -1,7 +1,7 @@
 <template>
   <main class="">
     <HeroSection  />
-    <ProjectSlider />
+    <!-- <ProjectSlider /> -->
     <AboutSection />
     <!-- <ProjectsFullSlider />
     <SkillsSlider />

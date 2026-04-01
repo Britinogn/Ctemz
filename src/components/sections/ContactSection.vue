@@ -8,8 +8,8 @@
         </h1>
         <div class="w-24 h-1 bg-white/70 mx-auto rounded-full"></div>
         <p class="text-gray-400 mt-4">
-          Have a question or want to work together?<br />
-          <span class="text-white/80  font-semibold">Let's Make It Happen!</span>
+          Want to build something impactful or have a question? <br />
+          <span class="text-white/80 font-semibold">Let's create it together!</span>
         </p>
       </div>
 
@@ -116,7 +116,7 @@ const handleSubmit = async () => {
   try {
     await ContactAPI.createContact(formData.value)
     status.value = {
-      message: "Message sent successfully! I'll get back to you soon.",
+      message: "Message sent successfully. I will respond shortly.",
       type: 'success'
     }
     formData.value = { name: '', email: '', subject: '', message: '' }

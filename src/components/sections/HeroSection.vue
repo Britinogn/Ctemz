@@ -38,21 +38,22 @@
       <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight">
         Hi, I'm 
         <span class="text-white">
-          Tino Ctemz
+          Tino Ctemz, Software Engineer
         </span>
         <span class="inline-block animate-wave"></span>
       </h1>
 
       <!-- Subheading -->
       <h2 class="text-xl md:text-2xl lg:text-4xl text-gray-300 font-bold animate-slide-in">
-        <span class="text-white">Frontend Developer</span> & 
-        <span class="text-white/85">Creative Technologist</span>
+        <span class="text-white">Full Stack Developer</span> & 
+        <span class="text-white/85">Web & Backend Solutions</span>
       </h2>
 
       <!-- Description -->
       <p class="max-w-xl text-lg text-gray-400 leading-relaxed">
-        I build <span class="text-white font-semibold">interactive</span>, 
-        <span class="text-white font-semibold">modern</span> web experiences that connect design and performance — clean code, smooth animations, and thoughtful UI.
+        I build <span class="text-white font-semibold">full stack</span> web applications that combine 
+        <span class="text-white font-semibold">robust backend</span> systems with 
+        <span class="text-white font-semibold">modern interactive</span> frontend, clean code, reliable performance, and thoughtful UI.
       </p>
 
       <!-- CTA Buttons -->
