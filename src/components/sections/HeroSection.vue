@@ -35,7 +35,7 @@
       </div>
 
       <!-- Main Heading -->
-      <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold leading-tight">
+      <h1 class="text-xl md:text-3xl lg:text-5xl font-extrabold leading-tight">
         Hi, I'm 
         <span class="text-white">
           Tino Ctemz, Software Engineer
@@ -44,7 +44,7 @@
       </h1>
 
       <!-- Subheading -->
-      <h2 class="text-xl md:text-2xl lg:text-4xl text-gray-300 font-bold animate-slide-in">
+      <h2 class="text-xl md:text-2xl lg:text-3xl text-gray-300 font-bold animate-slide-in">
         <span class="text-white">Full Stack Developer</span> & 
         <span class="text-white/85">Web & Backend Solutions</span>
       </h2>
