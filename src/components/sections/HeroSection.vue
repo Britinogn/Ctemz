@@ -3,7 +3,7 @@
 <template>
   <section
     id="hero"
-    class="relative min-h-screen flex flex-col-reverse md:flex-row items-center justify-center bg-black text-white overflow-hidden px-8 md:px-16"
+    class="relative min-h-screen flex flex-col-reverse md:flex-row items-center justify-center bg-black text-white overflow-hidden py-20 px-6 md:px-16"
   >
     <!-- Animated Background Blobs -->
     <!-- <div class="absolute inset-0 overflow-hidden opacity-20">
